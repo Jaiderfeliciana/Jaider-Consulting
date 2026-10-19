@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../vendor/resources.js"></script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../_ds/classical-2b683f44-4b58-4f33-a445-ca6b0e0672d0/styles.css">
+<script src="../_ds/classical-2b683f44-4b58-4f33-a445-ca6b0e0672d0/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; text-underline-offset: 3px; }
+  a:hover { color: var(--color-accent); text-decoration: underline; }
+  ::selection { background: rgba(182,130,53,0.24); }
+  *:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  input, textarea, button, select { font: inherit; }
+</style>
+</helmet>
+<div style="background:var(--color-bg);color:var(--color-text);font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+  <header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:14px clamp(18px,4vw,56px);background:rgba(248,247,247,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-divider)">
+    <a href="#top" style="display:flex;align-items:baseline;gap:10px;color:var(--color-text)">
+      <span style="font-family:'Cormorant Garamond',Garamond,serif;font-size:22px;letter-spacing:0.02em">Jaider Feliciana</span>
+      <span style="font-family:'Lora',serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-700)">Aruba</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(12px,2vw,26px);flex-wrap:wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase">
+      <a href="#servicio" style="color:var(--color-neutral-700)">Servicio</a>
+      <a href="#trabou" style="color:var(--color-neutral-700)">Trabou</a>
+      <a href="#curso" style="color:var(--color-neutral-700)">Curso</a>
+      <a href="#prijs" style="color:var(--color-neutral-700)">Prijs</a>
+      <a href="#contact" style="border:1px solid var(--color-accent);border-radius:4px;padding:9px 16px;color:var(--color-accent-700);letter-spacing:0.08em" style-hover="background:rgba(182,130,53,0.12);color:var(--color-accent-800);text-decoration:none">Consulta gratis</a>
+    </nav>
+  </header>
+
+  <section id="top" style="position:relative;padding:clamp(56px,9vw,132px) clamp(18px,4vw,56px) clamp(48px,7vw,96px);background:var(--color-bg);background-image:linear-gradient(rgba(32,31,29,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(32,31,29,0.05) 1px,transparent 1px);background-size:56px 56px;border-bottom:1px solid var(--color-divider);color:var(--color-text)">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,72px);align-items:center">
+      <div style="min-width:0">
+        <p style="margin:0 0 22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Website · Social Media · Curso · Consulta</p>
+        <h1 style="margin:0 0 24px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(40px,6.4vw,78px);line-height:1.04;letter-spacing:-0.02em;color:var(--color-text);text-wrap:pretty">Website y marketing cu ta <em style="font-style:italic;color:var(--color-accent-700)">trece cliente</em>, no djis ta bunita.</h1>
+        <p style="margin:0 0 14px;max-width:52ch;font-size:18px;line-height:1.65;color:var(--color-neutral-800);text-wrap:pretty">Mi ta traha website professional pa negoshi na Aruba, mi ta maneha bo social media, y mi ta sinja bo con pa hasi'é bo mes. Tur cos cu un solo meta: mas cliente y mas entrada.</p>
+        <p style="margin:0 0 34px;max-width:52ch;font-size:15px;font-style:italic;color:var(--color-neutral-700)">Websites, social media marketing and training built to bring you customers — not just compliments.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#contact" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border:1px solid var(--color-accent);border-radius:4px;color:var(--color-accent-700);font-family:'Cormorant Garamond',Garamond,serif;font-size:17px;letter-spacing:0.06em" style-hover="background:rgba(182,130,53,0.12);color:var(--color-accent-800);text-decoration:none">Boek un consulta gratis</a>
+          <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border:1px solid rgba(32,31,29,0.3);border-radius:4px;color:var(--color-text);font-family:'Cormorant Garamond',Garamond,serif;font-size:17px;letter-spacing:0.06em" style-hover="border-color:var(--color-text);text-decoration:none">WhatsApp {{ phoneDisplay }}</a>
+          <a href="#trabou" style="display:inline-flex;align-items:center;min-height:48px;padding:12px 6px;color:var(--color-neutral-700);font-size:14px;letter-spacing:0.06em" style-hover="color:var(--color-accent-700)">Wak trabou →</a>
+        </div>
+      </div>
+      <div style="min-width:0">
+        <div style="border:1px solid rgba(182,130,53,0.45);border-radius:4px;padding:14px;background:var(--color-surface)">
+          <div style="aspect-ratio:4/5;border-radius:2px;background-image:repeating-linear-gradient(135deg,#e6e4e2 0 8px,#efedeb 8px 16px);display:flex;align-items:flex-end;padding:18px">
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.08em;color:var(--color-neutral-800);background:rgba(243,242,242,0.86);padding:6px 10px;border-radius:2px">potret di Jaider — retrato profesional, vertical</span>
+          </div>
+        </div>
+        <p style="margin:12px 0 0;font-size:12px;color:var(--color-neutral-700);font-style:italic">Jaider Feliciana — web &amp; marketing, Oranjestad</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(30px,4vw,48px) clamp(18px,4vw,56px);background:var(--color-surface);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(20px,3vw,40px)">
+      <div>
+        <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:40px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">7</p>
+        <p style="margin:6px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Servicio bou un dak</p>
+      </div>
+      <div>
+        <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:40px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">14</p>
+        <p style="margin:6px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Dia pa bo site ta online</p>
+      </div>
+      <div>
+        <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:40px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">100%</p>
+        <p style="margin:6px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Traha pa telefon promé</p>
+      </div>
+      <div>
+        <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:40px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">24u</p>
+        <p style="margin:6px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Respondé riba WhatsApp</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicio" style="padding:clamp(56px,8vw,110px) clamp(18px,4vw,56px);background:var(--color-bg)">
+    <div style="max-width:1180px;margin:0 auto">
+      <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">01 — Servicio</p>
+      <h2 style="margin:0 0 16px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.08;color:var(--color-text)">Tur loke bo negoshi tin mester pa ta bisto online.</h2>
+      <p style="margin:0 0 clamp(32px,4vw,56px);max-width:56ch;color:var(--color-neutral-800)">Bo por tuma un servicio so, of laga mi maneha henter e paketé — di logo te cu e promé cliente cu ta bin via Google.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--color-divider);border:1px solid var(--color-divider);border-radius:4px;overflow:hidden">
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">01</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">Traha website</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Website rapido, cla pa telefon, cu boton di WhatsApp y formulario cu ta cai den bo inbox.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Fast, mobile-first websites that convert.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">02</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">Social media marketing</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Contenido pa Instagram, Facebook y TikTok cu un plan mensual — no post na blanco.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Monthly content plans that actually post.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">03</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">Ads riba Meta &amp; Google</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Campaña cu presupuesto cla, publico corecto y reporte cu bo por comprendé.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Paid campaigns with plain-language reporting.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">04</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">Branding &amp; logo</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Logo, color, tipografia y un guia chikito pa tur cos parce di un solo marca.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Logo and brand kit, consistent everywhere.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">05</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">SEO &amp; Google</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Google Business Profile, palabra clave local y velocidad — pa hende haña bo na Aruba.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Local SEO so people find you first.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">06</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">Consulta 1-op-1</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Un ora cu mi: mi ta wak bo negoshi y bo ta sali cu un plan skirbi, paso pa paso.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">One hour, one written action plan.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:clamp(24px,3vw,34px)" style-hover="background:var(--color-surface)">
+          <p style="margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">07</p>
+          <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:24px;color:var(--color-text)">Curso online</h3>
+          <p style="margin:0 0 8px;color:var(--color-neutral-800);font-size:15px">Sinja traha website y hasi social media marketing bo mes — den Papiamento.</p>
+          <p style="margin:0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Learn to build and market it yourself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trabou" style="padding:clamp(56px,8vw,110px) clamp(18px,4vw,56px);background:var(--color-surface);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);color:var(--color-text)">
+    <div style="max-width:1180px;margin:0 auto">
+      <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">02 — Trabou</p>
+      <h2 style="margin:0 0 clamp(30px,4vw,52px);font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.08;color:var(--color-text)">Trabou recien</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,3vw,34px)">
+        <figure style="margin:0">
+          <div style="border:1px solid rgba(182,130,53,0.45);border-radius:4px;padding:10px;background:var(--color-surface)">
+            <div style="aspect-ratio:4/3;border-radius:2px;background-image:repeating-linear-gradient(135deg,#e6e4e2 0 8px,#efedeb 8px 16px);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:var(--color-neutral-800);background:rgba(243,242,242,0.86);padding:5px 9px;border-radius:2px">screenshot website — restaurant</span>
+            </div>
+          </div>
+          <figcaption style="margin-top:10px;font-size:13px;color:var(--color-neutral-700)">Restaurant · website + menu online<br><span style="color:var(--color-accent-700)">+38% reservacion online</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="border:1px solid rgba(182,130,53,0.45);border-radius:4px;padding:10px;background:var(--color-surface)">
+            <div style="aspect-ratio:4/3;border-radius:2px;background-image:repeating-linear-gradient(135deg,#e6e4e2 0 8px,#efedeb 8px 16px);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:var(--color-neutral-800);background:rgba(243,242,242,0.86);padding:5px 9px;border-radius:2px">screenshot website — tour operator</span>
+            </div>
+          </div>
+          <figcaption style="margin-top:10px;font-size:13px;color:var(--color-neutral-700)">Tour operator · booking + Google Ads<br><span style="color:var(--color-accent-700)">2× mas boeking pa siman</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="border:1px solid rgba(182,130,53,0.45);border-radius:4px;padding:10px;background:var(--color-surface)">
+            <div style="aspect-ratio:4/3;border-radius:2px;background-image:repeating-linear-gradient(135deg,#e6e4e2 0 8px,#efedeb 8px 16px);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.06em;color:var(--color-neutral-800);background:rgba(243,242,242,0.86);padding:5px 9px;border-radius:2px">screenshot feed — salon di beleza</span>
+            </div>
+          </div>
+          <figcaption style="margin-top:10px;font-size:13px;color:var(--color-neutral-700)">Salon · social media mensual<br><span style="color:var(--color-accent-700)">Feed cla, cita yen tur siman</span></figcaption>
+        </figure>
+      </div>
+      <p style="margin:22px 0 0;font-size:12px;font-family:ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">Manda mi bo screenshot y testimonial y mi ta cambia e placeholder nan aki pa trabou real.</p>
+    </div>
+  </section>
+
+  <section id="curso" style="padding:clamp(56px,8vw,110px) clamp(18px,4vw,56px);background:var(--color-bg);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(30px,5vw,64px)">
+      <div style="min-width:0">
+        <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">03 — Curso</p>
+        <h2 style="margin:0 0 18px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.08;color:var(--color-text)">Sinja traha website y hasi marketing bo mes.</h2>
+        <p style="margin:0 0 12px;max-width:52ch;color:var(--color-neutral-800)">Un curso online den Papiamento pa doño di negoshi y pa hende cu kier cuminsá traha esaki como trabou. Sin palabra dificil: bo ta sigui mi paso pa paso y na fin bo tin bo propio website online y un plan di contenido cu ta funciona.</p>
+        <p style="margin:0 0 26px;max-width:52ch;font-size:15px;font-style:italic;color:var(--color-neutral-700)">A practical online course in Papiamento: build a real website and run your own social media.</p>
+        <div style="display:grid;gap:10px;margin-bottom:28px">
+          <p style="margin:0;padding-left:18px;border-left:1px solid var(--color-accent);color:var(--color-neutral-800)">Módulo 1 — Fundeshi: pa ken bo ta papia y kico bo ta bende</p>
+          <p style="margin:0;padding-left:18px;border-left:1px solid var(--color-accent);color:var(--color-neutral-800)">Módulo 2 — Traha bo website di A te Z</p>
+          <p style="margin:0;padding-left:18px;border-left:1px solid var(--color-accent);color:var(--color-neutral-800)">Módulo 3 — Contenido pa Instagram, Facebook y TikTok</p>
+          <p style="margin:0;padding-left:18px;border-left:1px solid var(--color-accent);color:var(--color-neutral-800)">Módulo 4 — Ads, Google y midi bo resultado</p>
+        </div>
+        <a href="#contact" style="display:inline-flex;align-items:center;min-height:48px;padding:12px 26px;border:1px solid var(--color-accent);border-radius:4px;color:var(--color-accent-700);font-family:'Cormorant Garamond',Garamond,serif;font-size:17px;letter-spacing:0.06em" style-hover="background:rgba(182,130,53,0.12);color:var(--color-accent-800);text-decoration:none">Inscribí den e curso</a>
+      </div>
+      <div style="min-width:0;border:1px solid var(--color-divider);border-radius:4px;padding:clamp(24px,3vw,36px);background:var(--color-surface);align-self:start">
+        <p style="margin:0 0 8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Proximo grupo</p>
+        <p style="margin:0 0 4px;font-family:'Cormorant Garamond',Garamond,serif;font-size:34px;line-height:1.1;color:var(--color-text)">4 siman · online · live</p>
+        <p style="margin:0 0 20px;color:var(--color-neutral-700);font-size:14px">2 sesion pa siman · grabacion ta keda pa bo · grupo di WhatsApp</p>
+        <div style="height:1px;background:var(--color-divider);margin:0 0 20px"></div>
+        <p style="margin:0 0 6px;font-family:'Cormorant Garamond',Garamond,serif;font-size:44px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">Afl. 395</p>
+        <p style="margin:0 0 20px;font-size:14px;color:var(--color-neutral-700)">of 2 pago di Afl. 210</p>
+        <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">{{ spotsLine }}</p>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showPricing }}" hint-placeholder-val="{{ true }}">
+  <section id="prijs" style="padding:clamp(56px,8vw,110px) clamp(18px,4vw,56px);background:var(--color-bg)">
+    <div style="max-width:1180px;margin:0 auto">
+      <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">04 — Prijs</p>
+      <h2 style="margin:0 0 16px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.08;color:var(--color-text)">Pakete cla, sin sorpresa.</h2>
+      <p style="margin:0 0 clamp(30px,4vw,52px);max-width:54ch;color:var(--color-neutral-800)">Tur prijs ta un punto di partida. Despues di e consulta gratis bo ta ricibí un oferta skirbi cu tur cos den dje.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(18px,2.4vw,28px)">
+        <div style="border:1px solid var(--color-divider);border-radius:4px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Start</p>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:26px;color:var(--color-text)">Website Start</h3>
+          <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:38px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">Afl. 1.450</p>
+          <div style="height:1px;background:var(--color-divider)"></div>
+          <p style="margin:0;color:var(--color-neutral-800);font-size:15px">1 pagina, cla pa telefon<br>Boton WhatsApp + formulario<br>Google Business Profile<br>Online den 14 dia</p>
+          <a href="#contact" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:1px solid rgba(32,31,29,0.3);border-radius:4px;color:var(--color-text);font-family:'Cormorant Garamond',Garamond,serif;font-size:16px" style-hover="background:rgba(32,31,29,0.06);text-decoration:none">Pidi oferta</a>
+        </div>
+        <div style="border:1px solid var(--color-accent);border-radius:4px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:14px;background:var(--color-surface)">
+          <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Mas popular</p>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:26px;color:var(--color-text)">Website Pro</h3>
+          <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:38px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">Afl. 2.900</p>
+          <div style="height:1px;background:rgba(182,130,53,0.5)"></div>
+          <p style="margin:0;color:var(--color-neutral-800);font-size:15px">Te 6 pagina + blog<br>Logo of refresh di branding<br>SEO local + velocidad<br>Text skirbi den 2 idioma<br>1 luna di suporte</p>
+          <a href="#contact" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:1px solid var(--color-accent);border-radius:4px;color:var(--color-accent-700);font-family:'Cormorant Garamond',Garamond,serif;font-size:16px" style-hover="background:rgba(182,130,53,0.14);color:var(--color-accent-800);text-decoration:none">Pidi oferta</a>
+        </div>
+        <div style="border:1px solid var(--color-divider);border-radius:4px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Mensual</p>
+          <h3 style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:26px;color:var(--color-text)">Social Media</h3>
+          <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:38px;line-height:1;color:var(--color-accent);font-variant-numeric:tabular-nums">Afl. 850<span style="font-size:16px;color:var(--color-neutral-700)"> /luna</span></p>
+          <div style="height:1px;background:var(--color-divider)"></div>
+          <p style="margin:0;color:var(--color-neutral-800);font-size:15px">12 post + 8 story pa luna<br>Plan di contenido pa luna<br>Maneho di comentario y DM<br>Reporte simpel cada luna</p>
+          <a href="#contact" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:1px solid rgba(32,31,29,0.3);border-radius:4px;color:var(--color-text);font-family:'Cormorant Garamond',Garamond,serif;font-size:16px" style-hover="background:rgba(32,31,29,0.06);text-decoration:none">Pidi oferta</a>
+        </div>
+      </div>
+      <p style="margin:24px 0 0;font-size:14px;color:var(--color-neutral-700)">Consulta 1-op-1: <span style="color:var(--color-accent-700)">Afl. 175 pa ora</span> — gratis si bo tuma un pakete despues. Ads: management for 15% di bo presupuesto.</p>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="padding:clamp(56px,8vw,110px) clamp(18px,4vw,56px);background:var(--color-surface);border-top:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto">
+      <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">05 — Proceso</p>
+      <h2 style="margin:0 0 clamp(30px,4vw,52px);font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.08;color:var(--color-text)">Con nos ta traha</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(20px,3vw,36px)">
+        <div style="border-top:1px solid var(--color-accent);padding-top:16px">
+          <p style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-size:30px;color:var(--color-accent);font-variant-numeric:tabular-nums">01</p>
+          <h3 style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:20px;color:var(--color-text)">Consulta gratis</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">30 minüt riba WhatsApp of na persona. Mi ta scucha kico bo negoshi tin mester.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-accent);padding-top:16px">
+          <p style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-size:30px;color:var(--color-accent);font-variant-numeric:tabular-nums">02</p>
+          <h3 style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:20px;color:var(--color-text)">Plan y oferta</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">Bo ta ricibí un oferta skirbi cu prijs fiho, tempo y kico ta inclui.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-accent);padding-top:16px">
+          <p style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-size:30px;color:var(--color-accent);font-variant-numeric:tabular-nums">03</p>
+          <h3 style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:20px;color:var(--color-text)">Traha y revisá</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">Bo ta wak e diseño promé cu nos lansa. Dos ronde di cambio ta inclui.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-accent);padding-top:16px">
+          <p style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-size:30px;color:var(--color-accent);font-variant-numeric:tabular-nums">04</p>
+          <h3 style="margin:0 0 8px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:20px;color:var(--color-text)">Lansa y crece</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">Nos ta pone online, midi kico ta funciona y sigui mehorá cada luna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,100px) clamp(18px,4vw,56px);background:var(--color-surface);border-top:1px solid var(--color-divider);color:var(--color-text)">
+    <div style="max-width:900px;margin:0 auto;text-align:center">
+      <p style="margin:0 0 22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">Loke cliente ta bisa</p>
+      <blockquote style="margin:0 0 18px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;font-size:clamp(26px,3.6vw,40px);line-height:1.25;color:var(--color-text);font-style:italic;text-wrap:pretty">“Testimonial di bo cliente ta bin aki — un frase corticu tocante e resultado cu el a haña.”</blockquote>
+      <p style="margin:0;font-size:14px;color:var(--color-neutral-700)">Nomber di cliente · Negoshi, Aruba</p>
+      <p style="margin:18px 0 0;font-size:12px;font-family:ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">placeholder — manda 2-3 testimonial real</p>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:clamp(56px,8vw,110px) clamp(18px,4vw,56px);background:var(--color-bg)">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(32px,5vw,68px)">
+      <div style="min-width:0">
+        <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-700)">06 — Contact</p>
+        <h2 style="margin:0 0 18px;font-family:'Cormorant Garamond',Garamond,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.08;color:var(--color-text)">Laga nos papia. E consulta ta gratis.</h2>
+        <p style="margin:0 0 28px;max-width:48ch;color:var(--color-neutral-800)">Conta mi kico bo negoshi ta hasi y kico bo ke logra. Mi ta contestá den 24 ora cu un idea concreto — sin obligacion.</p>
+        <div style="display:grid;gap:14px;font-size:15px">
+          <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;color:var(--color-accent-700)">WhatsApp — {{ phoneDisplay }}</a>
+          <a href="{{ telHref }}" style="display:inline-flex;align-items:center;gap:10px;color:var(--color-accent-700)">Yama — {{ phoneDisplay }}</a>
+          <p style="margin:0;color:var(--color-neutral-700)">Oranjestad, Aruba · Luna–Diabierna 9:00–18:00</p>
+        </div>
+      </div>
+      <div style="min-width:0;border:1px solid var(--color-divider);border-radius:4px;padding:clamp(24px,3vw,36px);background:var(--color-surface)">
+        <sc-if value="{{ sent }}">
+          <div style="display:grid;gap:14px">
+            <h3 style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-weight:500;font-size:28px;color:var(--color-text)">Danki, {{ sentName }}!</h3>
+            <p style="margin:0;color:var(--color-neutral-800)">Bo mensahe ta cla. Primi e boton pa manda mi'e direct riba WhatsApp — asina mi ta contestá mas lihé.</p>
+            <a href="{{ waPrefillHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border:1px solid var(--color-accent);border-radius:4px;color:var(--color-accent-700);font-family:'Cormorant Garamond',Garamond,serif;font-size:17px" style-hover="background:rgba(182,130,53,0.14);color:var(--color-accent-800);text-decoration:none">Habri WhatsApp</a>
+            <button type="button" onClick="{{ reset }}" style="justify-self:start;background:none;border:0;color:var(--color-neutral-700);font-size:13px;cursor:pointer;padding:6px 0" style-hover="color:var(--color-accent-700)">Manda otro mensahe</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display:grid;gap:16px">
+            <label style="display:grid;gap:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Bo nomber
+              <input value="{{ name }}" onChange="{{ setName }}" placeholder="Nomber completo" style="min-height:46px;padding:10px 12px;background:var(--color-bg);border:1px solid rgba(32,31,29,0.24);border-radius:4px;color:var(--color-text);font-family:'Lora',serif;font-size:15px;letter-spacing:0" style-focus="border-color:var(--color-accent)">
+            </label>
+            <label style="display:grid;gap:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">WhatsApp of email
+              <input value="{{ contact }}" onChange="{{ setContact }}" placeholder="+297 ... of nomber@email.com" style="min-height:46px;padding:10px 12px;background:var(--color-bg);border:1px solid rgba(32,31,29,0.24);border-radius:4px;color:var(--color-text);font-family:'Lora',serif;font-size:15px;letter-spacing:0" style-focus="border-color:var(--color-accent)">
+            </label>
+            <label style="display:grid;gap:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Kico bo tin mester
+              <select value="{{ topic }}" onChange="{{ setTopic }}" style="min-height:46px;padding:10px 12px;background:var(--color-bg);border:1px solid rgba(32,31,29,0.24);border-radius:4px;color:var(--color-text);font-family:'Lora',serif;font-size:15px;letter-spacing:0" style-focus="border-color:var(--color-accent)">
+                <option>Traha website</option>
+                <option>Social media marketing</option>
+                <option>Ads (Meta / Google)</option>
+                <option>Branding of logo</option>
+                <option>SEO / Google</option>
+                <option>Consulta 1-op-1</option>
+                <option>Curso online</option>
+              </select>
+            </label>
+            <label style="display:grid;gap:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700)">Conta mi un poco mas
+              <textarea value="{{ message }}" onChange="{{ setMessage }}" rows="4" placeholder="Kico bo negoshi ta hasi y kico bo ke logra?" style="padding:10px 12px;background:var(--color-bg);border:1px solid rgba(32,31,29,0.24);border-radius:4px;color:var(--color-text);font-family:'Lora',serif;font-size:15px;letter-spacing:0;resize:vertical" style-focus="border-color:var(--color-accent)"></textarea>
+            </label>
+            <p style="margin:0;font-size:13px;color:#8a3b1f;min-height:18px">{{ error }}</p>
+            <button type="submit" style="min-height:50px;background:transparent;border:1px solid var(--color-accent);border-radius:4px;color:var(--color-accent-700);font-family:'Cormorant Garamond',Garamond,serif;font-size:18px;letter-spacing:0.06em;cursor:pointer" style-hover="background:rgba(182,130,53,0.14);color:var(--color-accent-800)">Manda y boek mi consulta gratis</button>
+            <p style="margin:0;font-size:12px;color:var(--color-neutral-700);text-align:center">Sin obligacion · Respondé den 24 ora</p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(34px,4vw,52px) clamp(18px,4vw,56px);background:var(--color-surface);color:var(--color-text);border-top:1px solid var(--color-accent)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+      <div>
+        <p style="margin:0;font-family:'Cormorant Garamond',Garamond,serif;font-size:22px;color:var(--color-text)">Jaider Feliciana</p>
+        <p style="margin:4px 0 0;font-size:13px;color:var(--color-neutral-700)">Website · Social media · Curso · Aruba</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13px">
+        <a href="#servicio" style="color:var(--color-neutral-700)">Servicio</a>
+        <a href="#prijs" style="color:var(--color-neutral-700)">Prijs</a>
+        <a href="#curso" style="color:var(--color-neutral-700)">Curso</a>
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="color:var(--color-accent-700)">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+2975600770&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;min&quot;:0,&quot;max&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Curso&quot;}}">
+class Component extends DCLogic {
+  state = { name: "", contact: "", topic: "Traha website", message: "", error: "", sent: false, sentName: "" };
+
+  digits(v) { return String(v || "").replace(/[^0-9]/g, ""); }
+
+  renderVals() {
+    const raw = this.props.whatsapp ?? "+2975600770";
+    const d = this.digits(raw) || "2975600770";
+    const display = d.length === 10 ? "+" + d.slice(0, 3) + " " + d.slice(3, 6) + " " + d.slice(6) : raw;
+    const spots = this.props.spotsLeft ?? 8;
+    const s = this.state;
+    const prefill =
+      "Bon dia Jaider! Mi nomber ta " + s.sentName + ". Mi ta interesa den: " + s.topic +
+      (s.message ? ". " + s.message : ".");
+    return {
+      waHref: "https://wa.me/" + d,
+      waPrefillHref: "https://wa.me/" + d + "?text=" + encodeURIComponent(prefill),
+      telHref: "tel:+" + d,
+      phoneDisplay: display,
+      showPricing: this.props.showPricing ?? true,
+      spotsLine: spots > 0 ? "Solamente " + spots + " lugar disponibel" : "Lista di warda habri",
+      name: s.name, contact: s.contact, topic: s.topic, message: s.message,
+      error: s.error, sent: s.sent, notSent: !s.sent, sentName: s.sentName,
+      setName: (e) => this.setState({ name: e.target.value, error: "" }),
+      setContact: (e) => this.setState({ contact: e.target.value, error: "" }),
+      setTopic: (e) => this.setState({ topic: e.target.value }),
+      setMessage: (e) => this.setState({ message: e.target.value }),
+      submit: (e) => {
+        e.preventDefault();
+        if (!this.state.name.trim()) return this.setState({ error: "Yena bo nomber por fabor." });
+        if (!this.state.contact.trim()) return this.setState({ error: "Mi tin mester di un WhatsApp of email pa contestá." });
+        this.setState({ sent: true, sentName: this.state.name.trim().split(" ")[0] });
+      },
+      reset: () => this.setState({ sent: false, name: "", contact: "", message: "", error: "" })
+    };
+  }
+}
+</script>
+</body>
+</html>

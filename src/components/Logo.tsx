@@ -1,0 +1,21 @@
+export default function Logo({ id }: { id: string }) {
+  return (
+    <svg viewBox="0 0 900 870" width="34" height="33" aria-hidden="true" style={{ display: "block", flex: "0 0 auto" }}>
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="1" y2="0.35">
+          <stop offset="0" stopColor="#6a3ff2" />
+          <stop offset="1" stopColor="#d94ecb" />
+        </linearGradient>
+      </defs>
+      <g fill={`url(#${id})`}>
+        <circle cx="368" cy="92" r="17" />
+        <circle cx="518" cy="44" r="19" />
+        <circle cx="670" cy="92" r="17" />
+        <polygon points="378,115 462,188 518,72 575,188 660,115 634,240 404,240" />
+        <path d="M195,408 C238,328 282,294 362,291 L872,280 L806,364 C792,380 772,386 742,386 Z" />
+        <polygon points="513,490 747,486 690,582 513,584" />
+        <path d="M380,412 L486,412 L486,650 C486,775 398,842 282,842 C142,842 30,764 30,628 L30,600 L134,600 L134,632 C134,700 196,742 278,742 C342,742 380,702 380,650 Z" />
+      </g>
+    </svg>
+  );
+}

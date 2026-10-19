@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../vendor/resources.js"></script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="../image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #f4f2fb; }
+  a { color: #12111a; text-decoration: none; }
+  a:hover { color: #6a3ff2; }
+  ::selection { background: rgba(138,92,246,0.22); }
+  *:focus-visible { outline: 2px solid #8b5cf6; outline-offset: 3px; }
+  input, textarea, button, select { font: inherit; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="background:#f4f2fb;color:#12111a;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased">
+
+  <header style="position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,3vw,40px);background:rgba(244,242,251,0.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <a href="#top" aria-label="Jaider Feliciana — home" style="display:flex;align-items:center;gap:12px">
+      <svg viewBox="0 0 900 870" width="34" height="33" aria-hidden="true" style="display:block;flex:0 0 auto"><defs><linearGradient id="jfhead" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0" stop-color="#6a3ff2"></stop><stop offset="1" stop-color="#d94ecb"></stop></linearGradient></defs><g fill="url(#jfhead)"><circle cx="368" cy="92" r="17"></circle><circle cx="518" cy="44" r="19"></circle><circle cx="670" cy="92" r="17"></circle><polygon points="378,115 462,188 518,72 575,188 660,115 634,240 404,240"></polygon><path d="M195,408 C238,328 282,294 362,291 L872,280 L806,364 C792,380 772,386 742,386 Z"></path><polygon points="513,490 747,486 690,582 513,584"></polygon><path d="M380,412 L486,412 L486,650 C486,775 398,842 282,842 C142,842 30,764 30,628 L30,600 L134,600 L134,632 C134,700 196,742 278,742 C342,742 380,702 380,650 Z"></path></g></svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.02em;color:#12111a">Jaider Feliciana</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(8px,1.6vw,22px);flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.02em">
+      <a href="#servicio" style="color:#57547a">services</a>
+      <a href="#servicio" style="color:#57547a">work</a>
+      <a href="#curso" style="color:#57547a">course</a>
+      <a href="#prijs" style="color:#57547a">pricing</a>
+      <a href="#contact" style="display:inline-flex;align-items:center;min-height:38px;padding:0 18px;border-radius:999px;background:linear-gradient(90deg,#6a3ff2,#d94ecb);color:#fff;box-shadow:0 8px 26px rgba(106,63,242,0.28)" style-hover="filter:brightness(1.08);box-shadow:0 10px 30px rgba(217,78,203,0.34)">free consultation</a>
+    </nav>
+  </header>
+
+  <section id="top" style="position:relative;overflow:hidden;padding:clamp(72px,11vw,160px) clamp(16px,3vw,40px) clamp(64px,9vw,128px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div aria-hidden="true" style="position:absolute;top:50%;right:clamp(-260px,-14vw,-60px);transform:translateY(-50%);width:min(860px,78vw);aspect-ratio:1/1;pointer-events:none">
+      <p style="position:absolute;inset:0;margin:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(28px,4.6vw,64px);letter-spacing:0.28em;text-transform:uppercase;color:rgba(26,20,60,0.06);white-space:nowrap">Jaider Feliciana</p>
+      <canvas ref="{{ globeRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    </div>
+    <div style="position:relative;max-width:1280px;margin:0 auto">
+      <div style="max-width:720px">
+        <p style="margin:0 0 clamp(22px,3vw,34px);display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6a3ff2"><span style="width:7px;height:7px;border-radius:50%;background:#d94ecb;box-shadow:0 0 0 4px rgba(217,78,203,0.16)"></span>Web design studio · Aruba</p>
+        <h1 style="margin:0 0 clamp(22px,3vw,32px);font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(44px,7.6vw,112px);line-height:0.95;letter-spacing:-0.045em;text-wrap:balance">Your business deserves a website that <span style="background:linear-gradient(90deg,#6a3ff2,#d94ecb);-webkit-background-clip:text;background-clip:text;color:transparent">sells.</span></h1>
+        <p style="margin:0 0 clamp(30px,4vw,44px);max-width:40ch;font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:#37344a;text-wrap:pretty">People look you up online before they ever call. Make sure they find something great.</p>
+        <p style="margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#b0309f">See what your website is missing</p>
+        <div style="display:flex;max-width:560px;border-radius:999px;background:#fff;border:1px solid rgba(26,20,60,0.16);box-shadow:0 10px 30px rgba(106,63,242,0.10);overflow:hidden">
+          <input type="text" value="{{ scan }}" onChange="{{ onScan }}" placeholder="your website or business name" aria-label="Your website or business name" style="flex:1 1 auto;min-width:0;min-height:56px;padding:0 24px;border:0;outline:none;background:transparent;font-size:16px;color:#12111a">
+          <a href="{{ scanHref }}" target="_blank" rel="noopener" style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;margin:0;background:linear-gradient(90deg,#6a3ff2,#d94ecb);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.18em;text-transform:uppercase" style-hover="filter:brightness(1.08)">Scan</a>
+        </div>
+        <p style="margin:12px 0 0;font-size:13px;color:#57547a">Free. I'll send your results on WhatsApp within 24 hours.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(28px,3.5vw,40px)">
+          <span style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.8);border:1px solid rgba(26,20,60,0.12);font-size:14px;color:#37344a"><span style="color:#6a3ff2">✓</span> Live in 14 days</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.8);border:1px solid rgba(26,20,60,0.12);font-size:14px;color:#37344a"><span style="color:#6a3ff2">✓</span> Fixed price, no surprises</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.8);border:1px solid rgba(26,20,60,0.12);font-size:14px;color:#37344a"><span style="color:#6a3ff2">✓</span> English · Papiamento · Español · Nederlands</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(28px,4vw,48px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(12px,1.6vw,18px)">
+        <div style="position:relative;flex:3 1 380px;height:clamp(380px,46vw,620px);border-radius:18px;overflow:hidden;background:#1a1720">
+          <img src="../uploads/IMG-20261004-WA0001.jpg" alt="Jaider Feliciana, smiling" style="width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block">
+          <div style="position:absolute;left:clamp(12px,2vw,24px);right:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,24px);max-width:440px;padding:clamp(18px,2.2vw,26px);border-radius:16px;background:rgba(18,17,26,0.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.14);color:#fff">
+            <p style="margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#e879d6">Hi, I'm Jaider</p>
+            <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,1.8vw,22px);line-height:1.3;letter-spacing:-0.02em;color:#fff;text-wrap:pretty">I build websites and marketing for Aruba businesses — and I answer my own WhatsApp.</p>
+          </div>
+        </div>
+        <div style="flex:2 1 260px;height:clamp(380px,46vw,620px);border-radius:18px;overflow:hidden;background:#d9d3cb">
+          <img src="../uploads/IMG-20261004-WA0000.jpg" alt="Jaider Feliciana standing in a lobby" style="width:100%;height:100%;object-fit:cover;object-position:50% 8%;display:block">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding:clamp(28px,4vw,44px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(18px,3vw,40px)">
+      <div>
+        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums">14 days</p>
+        <p style="margin:8px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#57547a">To get your site live</p>
+      </div>
+      <div>
+        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums">7</p>
+        <p style="margin:8px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#57547a">Services under one roof</p>
+      </div>
+      <div>
+        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums">100%</p>
+        <p style="margin:8px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#57547a">Built mobile-first</p>
+      </div>
+      <div>
+        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums">24h</p>
+        <p style="margin:8px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#57547a">WhatsApp reply time</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicio" style="padding:clamp(56px,8vw,120px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:end;justify-content:space-between;margin-bottom:clamp(30px,4vw,56px)">
+        <h2 style="margin:0;max-width:18ch;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-0.04em">Everything your business needs to get found online.</h2>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">01 / Services</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:clamp(12px,1.6vw,18px)">
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#fff;transition:transform .18s ease,border-color .18s ease" style-hover="transform:translateY(-3px);border-color:#8b5cf6">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-web.png" alt="Website design mockup on laptop and phone" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a3ff2">01</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em">Website design</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#37344a">Fast, mobile-first websites with a WhatsApp button and a contact form that lands straight in your inbox.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#6a3ff2">From $795</p>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#fff;transition:transform .18s ease,border-color .18s ease" style-hover="transform:translateY(-3px);border-color:#8b5cf6">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-social.png" alt="Social media post on a phone with app icons" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a3ff2">02</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em">Social media marketing</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#37344a">Content for Instagram, Facebook and TikTok with a monthly plan — no more random posting.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#6a3ff2">$475 <span style="font-size:13px;color:#57547a">per month</span></p>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#fff;transition:transform .18s ease,border-color .18s ease" style-hover="transform:translateY(-3px);border-color:#8b5cf6">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-ads.png" alt="Ads dashboard on a laptop with Meta and Google Ads" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a3ff2">03</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em">Meta &amp; Google Ads</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#37344a">Campaigns with a clear budget, the right audience and reports you can actually understand.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#6a3ff2">$295 <span style="font-size:13px;color:#57547a">per month + 15% of ad spend</span></p>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#fff;transition:transform .18s ease,border-color .18s ease" style-hover="transform:translateY(-3px);border-color:#8b5cf6">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-brand.png" alt="Black and gold brand stationery" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a3ff2">04</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em">Branding &amp; logo</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#37344a">Logo, colours, typography and a short brand guide so everything looks like one brand.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#6a3ff2">From $650</p>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#fff;transition:transform .18s ease,border-color .18s ease" style-hover="transform:translateY(-3px);border-color:#8b5cf6">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-seo.png" alt="Google search on a laptop" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a3ff2">05</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em">SEO &amp; Google</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#37344a">Google Business Profile, local keywords and speed — so people in Aruba find you first.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#6a3ff2">$395 <span style="font-size:13px;color:#57547a">setup · $150 per month</span></p>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#fff;transition:transform .18s ease,border-color .18s ease" style-hover="transform:translateY(-3px);border-color:#8b5cf6">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-consult.png" alt="Video consultation on a laptop" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a3ff2">06</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em">1-on-1 consultation</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#37344a">One hour with me: we look at your business and you leave with a written, step-by-step plan.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#6a3ff2">$95 <span style="font-size:13px;color:#57547a">per hour</span></p>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);border-radius:16px;padding:clamp(20px,2.4vw,30px);background:#171233;color:#f4f2fb;transition:transform .18s ease" style-hover="transform:translateY(-3px)">
+          <div style="margin:0 0 20px;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#0b0a08;box-shadow:0 12px 30px rgba(26,20,60,0.14)"><img src="../assets/service-course.png" alt="Online course modules on a laptop" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block"></div>
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d9a7ff">07</p>
+          <h3 style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em;color:#fff">Online course</h3>
+          <p style="margin:0 0 6px;font-size:15px;color:#ded9f2">Learn to build your own website and run your own social media marketing.</p>
+          <p style="margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:19px;letter-spacing:-0.02em;color:#e879d6">$219 <span style="font-size:13px;color:#aca6c8">full course</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showWork }}" hint-placeholder-val="{{ false }}">
+  <section id="trabou" style="padding:clamp(56px,8vw,120px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:end;justify-content:space-between;margin-bottom:clamp(30px,4vw,56px)">
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-0.04em">Recent work</h2>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">02 / Work</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(14px,2vw,22px)">
+        <figure style="margin:0">
+          <div style="width:100%;max-width:270px;margin:0 auto;padding:10px;border-radius:44px;background:#12111a;box-shadow:0 0 0 1px rgba(26,20,60,0.25),0 24px 50px rgba(26,20,60,0.22),0 0 40px rgba(106,63,242,0.18)">
+            <div style="position:relative;border-radius:34px;overflow:hidden;background:#fff;aspect-ratio:9/19">
+              <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#12111a;z-index:2"></div>
+              <div style="display:flex;flex-direction:column;height:100%">
+                <div style="display:flex;justify-content:space-between;align-items:center;height:42px;padding:0 22px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:#12111a"><span>9:41</span><span style="display:flex;gap:4px;align-items:center"><span style="width:16px;height:9px;border-radius:2px;border:1.5px solid #12111a;display:block"></span></span></div>
+                <div style="flex:1 1 auto;min-height:0">
+                  <image-slot id="jf-work-1" shape="rect" placeholder="Phone screenshot — restaurant"></image-slot>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 12px 6px;height:30px;border-radius:999px;background:#f1eff8;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57547a"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#57547a" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>restaurant.aw</div>
+                <div style="width:96px;height:4px;border-radius:999px;background:#12111a;margin:2px auto 8px"></div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="margin-top:12px;font-size:14px;color:#37344a">Restaurant · website + online menu<br><span style="color:#6a3ff2">+38% online reservations</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="width:100%;max-width:270px;margin:0 auto;padding:10px;border-radius:44px;background:#12111a;box-shadow:0 0 0 1px rgba(26,20,60,0.25),0 24px 50px rgba(26,20,60,0.22),0 0 40px rgba(106,63,242,0.18)">
+            <div style="position:relative;border-radius:34px;overflow:hidden;background:#fff;aspect-ratio:9/19">
+              <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#12111a;z-index:2"></div>
+              <div style="display:flex;flex-direction:column;height:100%">
+                <div style="display:flex;justify-content:space-between;align-items:center;height:42px;padding:0 22px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:#12111a"><span>9:41</span><span style="display:flex;gap:4px;align-items:center"><span style="width:16px;height:9px;border-radius:2px;border:1.5px solid #12111a;display:block"></span></span></div>
+                <div style="flex:1 1 auto;min-height:0">
+                  <image-slot id="jf-work-2" shape="rect" placeholder="Phone screenshot — tour operator"></image-slot>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 12px 6px;height:30px;border-radius:999px;background:#f1eff8;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57547a"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#57547a" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>arubatours.aw</div>
+                <div style="width:96px;height:4px;border-radius:999px;background:#12111a;margin:2px auto 8px"></div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="margin-top:12px;font-size:14px;color:#37344a">Tour operator · booking + Google Ads<br><span style="color:#6a3ff2">2× more bookings per week</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="width:100%;max-width:270px;margin:0 auto;padding:10px;border-radius:44px;background:#12111a;box-shadow:0 0 0 1px rgba(26,20,60,0.25),0 24px 50px rgba(26,20,60,0.22),0 0 40px rgba(106,63,242,0.18)">
+            <div style="position:relative;border-radius:34px;overflow:hidden;background:#fff;aspect-ratio:9/19">
+              <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#12111a;z-index:2"></div>
+              <div style="display:flex;flex-direction:column;height:100%">
+                <div style="display:flex;justify-content:space-between;align-items:center;height:42px;padding:0 22px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:#12111a"><span>9:41</span><span style="display:flex;gap:4px;align-items:center"><span style="width:16px;height:9px;border-radius:2px;border:1.5px solid #12111a;display:block"></span></span></div>
+                <div style="flex:1 1 auto;min-height:0">
+                  <image-slot id="jf-work-3" shape="rect" placeholder="Phone screenshot — beauty salon"></image-slot>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin:8px 12px 6px;height:30px;border-radius:999px;background:#f1eff8;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57547a"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#57547a" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>beautysalon.aw</div>
+                <div style="width:96px;height:4px;border-radius:999px;background:#12111a;margin:2px auto 8px"></div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="margin-top:12px;font-size:14px;color:#37344a">Salon · monthly social media<br><span style="color:#6a3ff2">Clean feed, fully booked every week</span></figcaption>
+        </figure>
+      </div>
+      <p style="margin:20px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#57547a">drop in your real screenshots here</p>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="curso" style="padding:clamp(56px,8vw,120px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,4vw,64px)">
+      <div style="min-width:0">
+        <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">03 / Course</p>
+        <h2 style="margin:0 0 20px;max-width:16ch;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,60px);line-height:1;letter-spacing:-0.04em">Learn to build and market your business yourself.</h2>
+        <p style="margin:0 0 10px;max-width:50ch;color:#37344a">An online course for business owners and anyone who wants to start doing this as a career. Follow along step by step — by the end you'll have your own website live and a content plan that works.</p>
+        <p style="margin:0 0 28px;max-width:50ch;font-size:15px;color:#57547a">Taught in English and Papiamento.</p>
+        <div style="display:grid;gap:0;border-top:1px solid rgba(26,20,60,0.12);margin-bottom:28px">
+          <p style="margin:0;padding:14px 0;border-bottom:1px solid rgba(26,20,60,0.12);display:flex;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">M1</span> Foundations: who you're talking to and what you sell</p>
+          <p style="margin:0;padding:14px 0;border-bottom:1px solid rgba(26,20,60,0.12);display:flex;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">M2</span> Build your website from A to Z</p>
+          <p style="margin:0;padding:14px 0;border-bottom:1px solid rgba(26,20,60,0.12);display:flex;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">M3</span> Content for Instagram, Facebook and TikTok</p>
+          <p style="margin:0;padding:14px 0;border-bottom:1px solid rgba(26,20,60,0.12);display:flex;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">M4</span> Ads, Google and measuring your results</p>
+        </div>
+        <a href="#contact" style="display:inline-flex;align-items:center;min-height:52px;padding:0 28px;border-radius:999px;background:linear-gradient(90deg,#6a3ff2,#d94ecb);color:#fff;box-shadow:0 8px 26px rgba(106,63,242,0.28);font-family:'Space Grotesk',sans-serif;font-size:16px" style-hover="filter:brightness(1.08);box-shadow:0 10px 30px rgba(217,78,203,0.34)">Enroll in the course</a>
+      </div>
+      <div style="min-width:0;border-radius:18px;padding:clamp(24px,3vw,38px);background:#fff;border:1px solid rgba(26,20,60,0.12);align-self:start">
+        <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">Next group</p>
+        <p style="margin:0 0 6px;font-family:'Space Grotesk',sans-serif;font-size:30px;line-height:1.05;letter-spacing:-0.03em">4 weeks · online · live</p>
+        <p style="margin:0 0 22px;color:#57547a;font-size:15px">2 sessions a week · recordings are yours to keep · WhatsApp group</p>
+        <div style="height:1px;background:rgba(26,20,60,0.12);margin-bottom:22px"></div>
+        <p style="margin:0 0 6px;font-family:'Space Grotesk',sans-serif;font-size:46px;line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">$219</p>
+        <p style="margin:0 0 22px;font-size:15px;color:#57547a">or 2 payments of $115</p>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6a3ff2">{{ spotsLine }}</p>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showPricing }}" hint-placeholder-val="{{ true }}">
+  <section id="prijs" style="padding:clamp(56px,8vw,120px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:end;justify-content:space-between;margin-bottom:clamp(30px,4vw,56px)">
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-0.04em">Clear packages, no surprises.</h2>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">04 / Pricing</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:clamp(12px,1.6vw,18px)">
+        <div style="border:1px solid rgba(26,20,60,0.12);background:#fff;border-radius:16px;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#57547a">Basic</p>
+          <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em;color:#12111a">Basic package</h3>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:38px;line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:#12111a">$795</p>
+          <p style="margin:-6px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#57547a">one-time · setup</p>
+          <p style="margin:0;font-size:15px;color:#37344a">Then: <span style="color:#6a3ff2;font-family:'Space Grotesk',sans-serif;font-size:19px">$79</span> per month — hosting, backups, updates</p>
+          <div style="margin-top:4px"><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Website design</span><span style="font-size:14px;text-align:right;color:#12111a">1 page</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Social media marketing</span><span style="font-size:14px;text-align:right;color:#6b6885">—</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Meta &amp; Google Ads</span><span style="font-size:14px;text-align:right;color:#6b6885">—</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Branding &amp; logo</span><span style="font-size:14px;text-align:right;color:#12111a">Simple logo</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">SEO &amp; Google</span><span style="font-size:14px;text-align:right;color:#12111a">Google Business Profile</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">1-on-1 consultation</span><span style="font-size:14px;text-align:right;color:#12111a">1 session</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Online course</span><span style="font-size:14px;text-align:right;color:#6b6885">—</span></div></div>
+          <a href="#contact" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;border:1px solid rgba(26,20,60,0.24);font-family:'Space Grotesk',sans-serif;font-size:15px" style-hover="border-color:#12111a;background:#eae7f8">Get a quote</a>
+        </div>
+        <div style="position:relative;border:1px solid #171233;background:#171233;color:#f4f2fb;border-radius:16px;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 60px rgba(106,63,242,0.30)">
+          <span style="position:absolute;top:-13px;right:22px;padding:6px 14px;border-radius:999px;background:linear-gradient(90deg,#6a3ff2,#d94ecb);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase">Most popular</span>
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#d9a7ff">Standard</p>
+          <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em;color:#fff">Standard package</h3>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:38px;line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:#fff">$1,595</p>
+          <p style="margin:-6px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#b8b0d8">one-time · setup</p>
+          <p style="margin:0;font-size:15px;color:#ded9f2">Then: <span style="color:#e879d6;font-family:'Space Grotesk',sans-serif;font-size:19px">$475</span> per month — content and maintenance</p>
+          <div style="margin-top:4px"><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">Website design</span><span style="font-size:14px;text-align:right;color:#fff">Up to 6 pages + blog</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">Social media marketing</span><span style="font-size:14px;text-align:right;color:#fff">12 post + 8 story</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">Meta &amp; Google Ads</span><span style="font-size:14px;text-align:right;color:#fff">Campaign setup</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">Branding &amp; logo</span><span style="font-size:14px;text-align:right;color:#fff">Logo + brand guide</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">SEO &amp; Google</span><span style="font-size:14px;text-align:right;color:#fff">Full local SEO</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">1-on-1 consultation</span><span style="font-size:14px;text-align:right;color:#fff">1 per month</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(255,255,255,0.14)"><span style="font-size:14px;color:#b8b0d8">Online course</span><span style="font-size:14px;text-align:right;color:#fff">1 seat included</span></div></div>
+          <a href="#contact" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;background:linear-gradient(90deg,#8b5cf6,#e879d6);color:#12111a;font-family:'Space Grotesk',sans-serif;font-size:15px" style-hover="filter:brightness(1.08)">Get a quote</a>
+        </div>
+        <div style="border:1px solid rgba(26,20,60,0.12);background:#fff;border-radius:16px;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#57547a">Pro</p>
+          <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.02em;color:#12111a">Pro package</h3>
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:38px;line-height:1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;color:#12111a">$2,950</p>
+          <p style="margin:-6px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#57547a">one-time · setup</p>
+          <p style="margin:0;font-size:15px;color:#37344a">Then: <span style="color:#6a3ff2;font-family:'Space Grotesk',sans-serif;font-size:19px">$1,095</span> per month — all services, priority support</p>
+          <div style="margin-top:4px"><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Website design</span><span style="font-size:14px;text-align:right;color:#12111a">Unlimited + webshop</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Social media marketing</span><span style="font-size:14px;text-align:right;color:#12111a">20 post + 12 story + reels</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Meta &amp; Google Ads</span><span style="font-size:14px;text-align:right;color:#12111a">Managed + 15% ad spend</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Branding &amp; logo</span><span style="font-size:14px;text-align:right;color:#12111a">Full branding</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">SEO &amp; Google</span><span style="font-size:14px;text-align:right;color:#12111a">SEO + monthly report</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">1-on-1 consultation</span><span style="font-size:14px;text-align:right;color:#12111a">Unlimited</span></div><div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;min-height:42px;border-bottom:1px solid rgba(26,20,60,0.10)"><span style="font-size:14px;color:#57547a">Online course</span><span style="font-size:14px;text-align:right;color:#12111a">2 seats included</span></div></div>
+          <a href="#contact" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;border:1px solid rgba(26,20,60,0.24);font-family:'Space Grotesk',sans-serif;font-size:15px" style-hover="border-color:#12111a;background:#eae7f8">Get a quote</a>
+        </div>
+      </div>
+      <p style="margin:22px 0 0;font-size:15px;color:#57547a">Need just one thing? See individual prices under <a href="#servicio" style="color:#6a3ff2">services</a>. 1-on-1 consultation: <span style="color:#6a3ff2">$95 per hour</span> — free if you book a package afterwards. All prices in US dollars (USD), excl. BBO.</p>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="padding:clamp(56px,8vw,120px) clamp(16px,3vw,40px);border-bottom:1px solid rgba(26,20,60,0.10)">
+    <div style="max-width:1280px;margin:0 auto">
+      <p style="margin:0 0 clamp(26px,4vw,48px);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">05 / Process</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(18px,2.6vw,32px)">
+        <div style="border-top:1px solid #12111a;padding-top:16px">
+          <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">01</p>
+          <h3 style="margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.02em">Free consultation</h3>
+          <p style="margin:0;font-size:15px;color:#37344a">30 minutes on WhatsApp or in person. I listen to what your business really needs.</p>
+        </div>
+        <div style="border-top:1px solid #12111a;padding-top:16px">
+          <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">02</p>
+          <h3 style="margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.02em">Plan &amp; quote</h3>
+          <p style="margin:0;font-size:15px;color:#37344a">You get a written quote with a fixed price, timeline and exactly what's included.</p>
+        </div>
+        <div style="border-top:1px solid #12111a;padding-top:16px">
+          <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">03</p>
+          <h3 style="margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.02em">Build &amp; review</h3>
+          <p style="margin:0;font-size:15px;color:#37344a">You see the design before launch. Two rounds of changes included.</p>
+        </div>
+        <div style="border-top:1px solid #12111a;padding-top:16px">
+          <p style="margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6a3ff2">04</p>
+          <h3 style="margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.02em">Launch &amp; grow</h3>
+          <p style="margin:0;font-size:15px;color:#37344a">We go live, measure what works and keep improving every month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(20px,3vw,40px) clamp(16px,3vw,40px)">
+    <div style="position:relative;overflow:hidden;max-width:1280px;margin:0 auto;border-radius:24px;background:#171233;color:#fff;padding:clamp(36px,6vw,80px) clamp(24px,5vw,72px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px">
+      <div aria-hidden="true" style="position:absolute;top:-180px;left:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(106,63,242,0.55),rgba(106,63,242,0) 70%)"></div>
+      <div aria-hidden="true" style="position:absolute;bottom:-200px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(217,78,203,0.45),rgba(217,78,203,0) 70%)"></div>
+      <div style="position:relative;max-width:620px">
+        <p style="margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#e879d6">Ready when you are</p>
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,4.6vw,58px);line-height:1;letter-spacing:-0.045em;color:#fff;text-wrap:balance">More customers start with one message.</h2>
+      </div>
+      <div style="position:relative;display:flex;flex-wrap:wrap;gap:12px">
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;border-radius:999px;background:linear-gradient(90deg,#8b5cf6,#e879d6);color:#12111a;font-family:'Space Grotesk',sans-serif;font-size:17px" style-hover="filter:brightness(1.08)">Chat on WhatsApp</a>
+        <a href="#prijs" style="display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);color:#fff;font-family:'Space Grotesk',sans-serif;font-size:17px" style-hover="border-color:#fff;background:rgba(255,255,255,0.06)">See packages</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:clamp(56px,8vw,120px) clamp(16px,3vw,40px)">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,4vw,64px)">
+      <div style="min-width:0">
+        <p style="margin:0 0 20px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#6a3ff2">06 / Contact</p>
+        <h2 style="margin:0 0 20px;max-width:14ch;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-0.04em">Let's talk. The consultation is free.</h2>
+        <p style="margin:0 0 28px;max-width:46ch;color:#37344a">Tell me what your business does and what you want to achieve. I'll reply within 24 hours with a concrete idea — no obligation.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px">
+          <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border-radius:18px;background:#fff;border:1px solid rgba(26,20,60,0.10);color:#12111a;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(106,63,242,0.18);color:#12111a"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6a3ff2,#d94ecb);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.35) inset,0 6px 18px rgba(106,63,242,0.45),0 0 26px rgba(217,78,203,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"></path><path d="M9.2 8.6c.2-.4.5-.4.8-.4l.6 1.4c.1.2 0 .4-.1.6l-.4.5c.5 1 1.3 1.8 2.3 2.3l.5-.4c.2-.1.4-.2.6-.1l1.4.6c0 .3 0 .6-.4.8-.8.6-1.8.6-3-.1-1.2-.7-2.2-1.7-2.7-2.9-.4-1-.2-1.8.4-2.3z" fill="#fff" stroke="none"></path></svg></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#57547a">WhatsApp</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;overflow-wrap:anywhere">{{ phoneDisplay }}</span></span></a>
+          <a href="{{ telHref }}" style="display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border-radius:18px;background:#fff;border:1px solid rgba(26,20,60,0.10);color:#12111a;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(106,63,242,0.18);color:#12111a"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6a3ff2,#d94ecb);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.35) inset,0 6px 18px rgba(106,63,242,0.45),0 0 26px rgba(217,78,203,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.5 4-2 1.3a11 11 0 0 0 6.7 6.7L16 14l4 1.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"></path></svg></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#57547a">Call</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;overflow-wrap:anywhere">{{ phoneDisplay }}</span></span></a>
+          <a href="mailto:jaiderfeliciana@gmail.com" style="display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border-radius:18px;background:#fff;border:1px solid rgba(26,20,60,0.10);color:#12111a;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(106,63,242,0.18);color:#12111a"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6a3ff2,#d94ecb);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.35) inset,0 6px 18px rgba(106,63,242,0.45),0 0 26px rgba(217,78,203,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#57547a">Email</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;overflow-wrap:anywhere">jaiderfeliciana@gmail.com</span></span></a>
+          <a href="https://www.instagram.com/felicianajaider/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border-radius:18px;background:#fff;border:1px solid rgba(26,20,60,0.10);color:#12111a;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(106,63,242,0.18);color:#12111a"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6a3ff2,#d94ecb);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.35) inset,0 6px 18px rgba(106,63,242,0.45),0 0 26px rgba(217,78,203,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="#fff" stroke="none"></circle></svg></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#57547a">Instagram</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;overflow-wrap:anywhere">@felicianajaider</span></span></a>
+          <a href="https://www.facebook.com/search/top?q=Jaider%20Feliciana" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border-radius:18px;background:#fff;border:1px solid rgba(26,20,60,0.10);color:#12111a;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(106,63,242,0.18);color:#12111a"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6a3ff2,#d94ecb);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.35) inset,0 6px 18px rgba(106,63,242,0.45),0 0 26px rgba(217,78,203,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.6-1.5H18V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.1H9.2v3h2.6V21"></path></svg></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#57547a">Facebook</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;overflow-wrap:anywhere">Jaider Feliciana</span></span></a>
+          <a href="https://www.tiktok.com/@felicianajaider" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border-radius:18px;background:#fff;border:1px solid rgba(26,20,60,0.10);color:#12111a;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(106,63,242,0.18);color:#12111a"><span style="flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6a3ff2,#d94ecb);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(255,255,255,0.35) inset,0 6px 18px rgba(106,63,242,0.45),0 0 26px rgba(217,78,203,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5v11a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3.5c.4 2.4 2 4 4.5 4.3"></path></svg></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#57547a">TikTok</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;letter-spacing:-0.01em;overflow-wrap:anywhere">@felicianajaider</span></span></a>
+        </div>
+        <p style="margin:16px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#57547a">Oranjestad, Aruba · Mon–Fri 9:00–18:00</p>
+      </div>
+      <div style="min-width:0;border:1px solid rgba(26,20,60,0.12);border-radius:18px;padding:clamp(22px,3vw,34px);background:#fff">
+        <sc-if value="{{ sent }}">
+          <div style="display:grid;gap:14px">
+            <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:26px;letter-spacing:-0.03em">Thanks, {{ sentName }}!</h3>
+            <p style="margin:0;color:#37344a">Your message is ready. Tap the button to send it straight to me on WhatsApp.</p>
+            <a href="{{ waPrefillHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;background:linear-gradient(90deg,#6a3ff2,#d94ecb);color:#fff;box-shadow:0 8px 26px rgba(106,63,242,0.28);font-family:'Space Grotesk',sans-serif;font-size:16px" style-hover="filter:brightness(1.08);box-shadow:0 10px 30px rgba(217,78,203,0.34)">Open WhatsApp</a>
+            <button type="button" onClick="{{ reset }}" style="justify-self:start;background:none;border:0;color:#57547a;font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;padding:6px 0" style-hover="color:#6a3ff2">send another message</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display:grid;gap:14px">
+            <label style="display:grid;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#57547a">Your name
+              <input value="{{ name }}" onChange="{{ setName }}" placeholder="Full name" style="min-height:48px;padding:10px 14px;background:#f4f2fb;border:1px solid rgba(26,20,60,0.18);border-radius:10px;color:#12111a;font-family:'IBM Plex Sans',sans-serif;font-size:16px;letter-spacing:0;text-transform:none" style-focus="border-color:#8b5cf6">
+            </label>
+            <label style="display:grid;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#57547a">WhatsApp or email
+              <input value="{{ contact }}" onChange="{{ setContact }}" placeholder="+297 ... or name@email.com" style="min-height:48px;padding:10px 14px;background:#f4f2fb;border:1px solid rgba(26,20,60,0.18);border-radius:10px;color:#12111a;font-family:'IBM Plex Sans',sans-serif;font-size:16px;letter-spacing:0;text-transform:none" style-focus="border-color:#8b5cf6">
+            </label>
+            <label style="display:grid;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#57547a">What do you need?
+              <select value="{{ topic }}" onChange="{{ setTopic }}" style="min-height:48px;padding:10px 14px;background:#f4f2fb;border:1px solid rgba(26,20,60,0.18);border-radius:10px;color:#12111a;font-family:'IBM Plex Sans',sans-serif;font-size:16px;letter-spacing:0;text-transform:none" style-focus="border-color:#8b5cf6">
+                <option>Website design</option>
+                <option>Social media marketing</option>
+                <option>Ads (Meta / Google)</option>
+                <option>Branding or logo</option>
+                <option>SEO / Google</option>
+                <option>1-on-1 consultation</option>
+                <option>Online course</option>
+              </select>
+            </label>
+            <label style="display:grid;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#57547a">Tell me a bit more
+              <textarea value="{{ message }}" onChange="{{ setMessage }}" rows="4" placeholder="What does your business do, and what do you want to achieve?" style="padding:12px 14px;background:#f4f2fb;border:1px solid rgba(26,20,60,0.18);border-radius:10px;color:#12111a;font-family:'IBM Plex Sans',sans-serif;font-size:16px;letter-spacing:0;text-transform:none;resize:vertical" style-focus="border-color:#8b5cf6"></textarea>
+            </label>
+            <p style="margin:0;font-size:13px;color:#a33a1c;min-height:18px">{{ error }}</p>
+            <button type="submit" style="min-height:52px;border-radius:999px;background:#12111a;border:0;color:#f4f2fb;font-family:'Space Grotesk',sans-serif;font-size:16px;cursor:pointer" style-hover="filter:brightness(1.08);box-shadow:0 10px 30px rgba(217,78,203,0.34)">Send &amp; book my free consultation</button>
+            <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57547a;text-align:center">no obligation · reply within 24 hours</p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(30px,4vw,48px) clamp(16px,3vw,40px);border-top:1px solid rgba(26,20,60,0.10);background:#eae7f8">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg viewBox="0 0 900 870" width="34" height="33" aria-hidden="true" style="display:block;flex:0 0 auto"><defs><linearGradient id="jffoot" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0" stop-color="#6a3ff2"></stop><stop offset="1" stop-color="#d94ecb"></stop></linearGradient></defs><g fill="url(#jffoot)"><circle cx="368" cy="92" r="17"></circle><circle cx="518" cy="44" r="19"></circle><circle cx="670" cy="92" r="17"></circle><polygon points="378,115 462,188 518,72 575,188 660,115 634,240 404,240"></polygon><path d="M195,408 C238,328 282,294 362,291 L872,280 L806,364 C792,380 772,386 742,386 Z"></path><polygon points="513,490 747,486 690,582 513,584"></polygon><path d="M380,412 L486,412 L486,650 C486,775 398,842 282,842 C142,842 30,764 30,628 L30,600 L134,600 L134,632 C134,700 196,742 278,742 C342,742 380,702 380,650 Z"></path></g></svg>
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.02em;color:#12111a">Jaider Feliciana</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:12px">
+        <a href="#servicio" style="color:#57547a">services</a>
+        <a href="#prijs" style="color:#57547a">pricing</a>
+        <a href="#curso" style="color:#57547a">course</a>
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="color:#6a3ff2">whatsapp</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+2975600770&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;spotsLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;min&quot;:0,&quot;max&quot;:30,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Course&quot;},&quot;showWork&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
+class Component extends DCLogic {
+  globeRef = React.createRef();
+  state = { scan: "", name: "", contact: "", topic: "Website design", message: "", error: "", sent: false, sentName: "" };
+
+  componentWillUnmount() { cancelAnimationFrame(this._raf); }
+
+  startGlobe() {
+    const cv = this._globeEl || document.querySelector('#top canvas');
+    if (!cv || !cv.clientWidth) { this._raf = requestAnimationFrame(() => this.startGlobe()); return; }
+    const ctx = cv.getContext('2d');
+    const N = 170, pts = [], ga = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < N; i++) {
+      const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), t = ga * i;
+      pts.push([Math.cos(t) * r, y, Math.sin(t) * r, Math.random() * 6.28]);
+    }
+    const pairs = [];
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+      const a = pts[i], b = pts[j], d = (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2;
+      if (d < 0.085) pairs.push([i, j]);
+    }
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const tick = (ts) => {
+      const w = cv.clientWidth, h = cv.clientHeight, dpr = window.devicePixelRatio || 1;
+      if (cv.width !== w * dpr) { cv.width = w * dpr; cv.height = h * dpr; }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      const R = Math.min(w, h) * 0.46, cx = w / 2, cy = h / 2;
+      const rot = reduce ? 0.6 : ts * 0.00006, tilt = 0.32;
+      const cr = Math.cos(rot), sr = Math.sin(rot), ct = Math.cos(tilt), st = Math.sin(tilt);
+      const P = pts.map(p => {
+        const x = p[0] * cr + p[2] * sr, z0 = -p[0] * sr + p[2] * cr;
+        const y = p[1] * ct - z0 * st, z = p[1] * st + z0 * ct;
+        return [cx + x * R, cy + y * R, z, p[1], p[3]];
+      });
+      ctx.lineWidth = 1;
+      for (const [i, j] of pairs) {
+        const a = P[i], b = P[j], depth = ((a[2] + b[2]) / 2 + 1) / 2;
+        ctx.strokeStyle = 'rgba(106,63,242,' + (0.05 + depth * 0.28).toFixed(3) + ')';
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      }
+      for (const p of P) {
+        const depth = (p[2] + 1) / 2, mix = (p[3] + 1) / 2;
+        const tw = reduce ? 1 : 0.65 + 0.35 * Math.sin(ts * 0.002 + p[4]);
+        const r = Math.round(106 + (217 - 106) * mix), g = Math.round(63 + (78 - 63) * mix), bl = Math.round(242 + (203 - 242) * mix);
+        const rad = (1.2 + depth * 2.6) * tw;
+        if (depth > 0.55) {
+          ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + bl + ',' + (0.14 * depth * tw).toFixed(3) + ')';
+          ctx.beginPath(); ctx.arc(p[0], p[1], rad * 3.4, 0, 6.283); ctx.fill();
+        }
+        ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + bl + ',' + (0.25 + depth * 0.75).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(p[0], p[1], rad, 0, 6.283); ctx.fill();
+      }
+      if (!reduce) this._raf = requestAnimationFrame(tick);
+    };
+    this._raf = requestAnimationFrame(tick);
+  }
+
+  componentDidMount() {
+    this.startGlobe();
+    if (!("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.style.animation = "rise .5s cubic-bezier(.2,.7,.3,1) both";
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    setTimeout(() => {
+      document.querySelectorAll("section > div > *").forEach((el) => io.observe(el));
+    }, 60);
+  }
+
+  digits(v) { return String(v || "").replace(/[^0-9]/g, ""); }
+
+  renderVals() {
+    const raw = this.props.whatsapp ?? "+2975600770";
+    const d = this.digits(raw) || "2975600770";
+    const display = d.length === 10 ? "+" + d.slice(0, 3) + " " + d.slice(3, 6) + " " + d.slice(6) : raw;
+    const spots = this.props.spotsLeft ?? 8;
+    const s = this.state;
+    const prefill = "Hi Jaider! My name is " + s.sentName + ". I'm interested in: " + s.topic + (s.message ? ". " + s.message : ".");
+    return {
+      waHref: "https://wa.me/" + d,
+      globeRef: this._setGlobe || (this._setGlobe = (el) => { this._globeEl = el; }),
+      scan: this.state.scan,
+      onScan: (ev) => this.setState({ scan: ev.target.value }),
+      scanHref: "https://wa.me/" + d + "?text=" + encodeURIComponent("Hi Jaider! I'd like a free website check for: " + (this.state.scan.trim() || "my business")),
+      waPrefillHref: "https://wa.me/" + d + "?text=" + encodeURIComponent(prefill),
+      telHref: "tel:+" + d,
+      phoneDisplay: display,
+      showPricing: this.props.showPricing ?? true,
+      showWork: this.props.showWork ?? false,
+      spotsLine: spots > 0 ? "only " + spots + " spots left" : "waitlist open",
+      name: s.name, contact: s.contact, topic: s.topic, message: s.message,
+      error: s.error, sent: s.sent, notSent: !s.sent, sentName: s.sentName,
+      setName: (e) => this.setState({ name: e.target.value, error: "" }),
+      setContact: (e) => this.setState({ contact: e.target.value, error: "" }),
+      setTopic: (e) => this.setState({ topic: e.target.value }),
+      setMessage: (e) => this.setState({ message: e.target.value }),
+      submit: (e) => {
+        e.preventDefault();
+        if (!this.state.name.trim()) return this.setState({ error: "Please enter your name." });
+        if (!this.state.contact.trim()) return this.setState({ error: "I need a WhatsApp number or email to reply." });
+        this.setState({ sent: true, sentName: this.state.name.trim().split(" ")[0] });
+      },
+      reset: () => this.setState({ sent: false, name: "", contact: "", message: "", error: "" })
+    };
+  }
+}
+</script>
+</body>
+</html>
