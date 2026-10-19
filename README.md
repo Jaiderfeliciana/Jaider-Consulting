@@ -1,7 +1,7 @@
 # Jaider Feliciana — Website
 
 Website for Jaider Feliciana's web design, social media and ads services in Aruba.
-Built with [Next.js](https://nextjs.org) and exported as a static site to GitHub Pages.
+Built with [Next.js](https://nextjs.org) and hosted on [Vercel](https://vercel.com).
 
 ## Run it locally
 
@@ -39,16 +39,12 @@ Images live in `src/assets/`. Styling is in `src/app/globals.css`.
 
 ## Publishing
 
-`.github/workflows/deploy.yml` builds and deploys the site on every push to `main`.
-
-One-time setup: in the repository on GitHub go to **Settings → Pages** and set
-**Source** to **GitHub Actions**. The site will then be live at
-`https://jaiderfeliciana.github.io/Jaider-Consulting/`.
-
-To use your own domain later, add it under **Settings → Pages → Custom domain**.
+The site is deployed by Vercel, which is connected to this GitHub repository.
+Every push to `main` updates the live site; pushes to other branches get a preview link.
 
 ## Build
 
 ```sh
-npm run build   # outputs the static site to out/
+npm run build   # production build
+npm start       # serve the production build locally
 ```
