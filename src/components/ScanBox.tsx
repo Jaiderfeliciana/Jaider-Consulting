@@ -15,7 +15,7 @@ export default function ScanBox() {
           type="text"
           value={scan}
           onChange={(e) => setScan(e.target.value)}
-          placeholder="your website or business name"
+          placeholder="website or business name"
           aria-label="Your website or business name"
         />
         <a href={href} target="_blank" rel="noopener">Scan</a>
