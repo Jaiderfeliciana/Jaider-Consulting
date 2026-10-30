@@ -33,7 +33,7 @@ export function whatsappHref(text?: string) {
 
 export const course = {
   spotsLeft: 8,
-  price: "$219",
+  price: "$215",
   installments: "or 2 payments of $115",
   format: "4 weeks · online · live",
   details: "2 sessions a week · recordings are yours to keep · WhatsApp group",
@@ -114,7 +114,7 @@ export const services: Service[] = [
   {
     title: "Online course",
     description: "Learn to build your own website and run your own social media marketing.",
-    price: "$219",
+    price: "$215",
     priceNote: "full course",
     image: courseImg,
     imageAlt: "Online course modules on a laptop",
