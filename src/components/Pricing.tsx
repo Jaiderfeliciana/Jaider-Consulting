@@ -31,7 +31,7 @@ export default function Pricing() {
         </div>
         <p className="pricing-note">
           Need just one thing? See individual prices under <a href="#services">services</a>. 1-on-1 consultation:{" "}
-          <span>$95 per hour</span> — free if you book a package afterwards. All prices in US dollars (USD), excl. BBO.
+          <span>$100 per hour</span> — free if you book a package afterwards. All prices in US dollars (USD), excl. BBO.
         </p>
       </div>
     </section>

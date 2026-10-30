@@ -106,7 +106,7 @@ export const services: Service[] = [
   {
     title: "1-on-1 consultation",
     description: "One hour with me: we look at your business and you leave with a written, step-by-step plan.",
-    price: "$95",
+    price: "$100",
     priceNote: "per hour",
     image: consultImg,
     imageAlt: "Video consultation on a laptop",
