@@ -83,7 +83,7 @@ export const services: Service[] = [
   {
     title: "Meta & Google Ads",
     description: "Campaigns with a clear budget, the right audience and reports you can actually understand.",
-    price: "$295",
+    price: "$350",
     priceNote: "per month + 15% of ad spend",
     image: adsImg,
     imageAlt: "Ads dashboard on a laptop with Meta and Google Ads",
