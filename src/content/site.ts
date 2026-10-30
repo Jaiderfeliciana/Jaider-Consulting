@@ -13,7 +13,7 @@ export const contact = {
   whatsapp: "+2975600770",
   email: "jaiderfeliciana@gmail.com",
   instagram: { handle: "@felicianajaider", url: "https://www.instagram.com/felicianajaider/" },
-  facebook: { handle: "Jaider Feliciana", url: "https://www.facebook.com/search/top?q=Jaider%20Feliciana" },
+  facebook: { handle: "Jaider Feliciana", url: "https://www.facebook.com/share/19hUQv1bGm/" },
   tiktok: { handle: "@felicianajaider", url: "https://www.tiktok.com/@felicianajaider" },
   location: "Oranjestad, Aruba · Mon–Fri 9:00–18:00",
 };
