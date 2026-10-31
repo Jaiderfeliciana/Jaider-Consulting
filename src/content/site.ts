@@ -8,6 +8,7 @@ import brandImg from "@/assets/services/brand.png";
 import seoImg from "@/assets/services/seo.png";
 import consultImg from "@/assets/services/consult.png";
 import courseImg from "@/assets/services/course.png";
+import aiBotImg from "@/assets/services/ai-bot.png";
 
 export const contact = {
   whatsapp: "+2975600770",
@@ -49,7 +50,7 @@ export const showPricing = true;
 
 export const stats = [
   { value: "14 days", label: "To get your site live" },
-  { value: "7", label: "Services under one roof" },
+  { value: "8", label: "Services under one roof" },
   { value: "100%", label: "Built mobile-first" },
   { value: "24h", label: "WhatsApp reply time" },
 ];
@@ -110,6 +111,14 @@ export const services: Service[] = [
     priceNote: "per hour",
     image: consultImg,
     imageAlt: "Video consultation on a laptop",
+  },
+  {
+    title: "Grok AI chatbot",
+    description: "An AI assistant powered by Grok that answers your customers 24/7 on your website or WhatsApp and sends new leads straight to you.",
+    price: "$595",
+    priceNote: "setup · $49 per month",
+    image: aiBotImg,
+    imageAlt: "AI chatbot answering a customer on a phone",
   },
   {
     title: "Online course",
@@ -197,6 +206,7 @@ export const contactTopics = [
   "Ads (Meta / Google)",
   "Branding or logo",
   "SEO / Google",
+  "Grok AI chatbot",
   "1-on-1 consultation",
   "Online course",
 ];
