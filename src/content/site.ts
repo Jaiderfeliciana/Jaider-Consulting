@@ -10,13 +10,23 @@ import consultImg from "@/assets/services/consult.png";
 import courseImg from "@/assets/services/course.png";
 import aiBotImg from "@/assets/services/ai-bot.png";
 
+// Your working hours. Shown in the Contact section and on the /book planner.
+// The hours clients can actually book are set in Cal.com under "Availability"; keep both the same.
+export const hours = {
+  days: "Mon–Fri",
+  start: "18:00",
+  end: "20:00",
+  timeZone: "America/Aruba",
+  place: "Aruba",
+};
+
 export const contact = {
   whatsapp: "+2975600770",
   email: "jaiderfeliciana@gmail.com",
   instagram: { handle: "@felicianajaider", url: "https://www.instagram.com/felicianajaider/" },
   facebook: { handle: "Jaider Feliciana", url: "https://www.facebook.com/share/19hUQv1bGm/" },
   tiktok: { handle: "@felicianajaider", url: "https://www.tiktok.com/@felicianajaider" },
-  location: "Oranjestad, Aruba · Mon–Fri 18:00–20:00",
+  location: `Oranjestad, Aruba · ${hours.days} ${hours.start}–${hours.end}`,
 };
 
 const phoneDigits = contact.whatsapp.replace(/[^0-9]/g, "");

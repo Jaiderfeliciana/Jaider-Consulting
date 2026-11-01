@@ -342,3 +342,19 @@ section[id] { scroll-margin-top: 76px; }
   .planner.is-live { min-height: 560px; }
   .planner-fallback .btn { width: 100%; }
 }
+.hours-bar {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px 32px; align-items: center;
+  margin-bottom: 16px; padding: clamp(18px, 2.4vw, 26px); border-radius: 16px;
+  background: var(--night); color: #fff;
+}
+.hours-bar .eyebrow { color: var(--pink); margin-bottom: 8px; }
+.hours-main { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); line-height: 1.05; letter-spacing: -0.03em; }
+.hours-sub { margin: 6px 0 0; font-size: 15px; color: #c9c2e6; }
+.hours-convert label { display: grid; gap: 6px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c9c2e6; }
+.hours-convert select {
+  min-height: 48px; width: 100%; padding: 10px 14px; border-radius: 10px;
+  background: #fff; color: var(--ink); border: 0;
+  font-family: var(--font-body); font-size: 16px; letter-spacing: 0; text-transform: none;
+}
+.hours-result { margin: 10px 0 0; font-size: 15px; color: #ded9f2; }
+.hours-result strong { color: #fff; font-family: var(--font-display); font-weight: 500; font-size: 17px; }

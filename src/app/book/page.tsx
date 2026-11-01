@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingPlanner from "@/components/BookingPlanner";
+import HoursBar from "@/components/HoursBar";
 import { booking, whatsappHref } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -23,9 +24,10 @@ export default function BookPage() {
                 ? "Choose a session, then pick a day and time. Booked times are taken off the calendar automatically, so you only see hours that are still free. You'll get a confirmation by email."
                 : "Choose a session and send me a day and time that works for you on WhatsApp. I'll confirm within 24 hours."}
             </p>
+            <HoursBar />
             <BookingPlanner />
             <p className="book-note">
-              {booking.calUsername && "Times are shown in your own time zone. "}Prefer to talk first?{" "}
+              {booking.calUsername && "The calendar shows times in your own time zone; you can change it under the calendar. "}Prefer to talk first?{" "}
               <a href={whatsappHref("Hi Jaider! I have a question before booking.")} target="_blank" rel="noopener">
                 Message me on WhatsApp
               </a>
