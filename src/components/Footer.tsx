@@ -10,9 +10,9 @@ export default function Footer() {
           <span className="brand-name">Jaider Feliciana</span>
         </div>
         <div className="footer-links">
-          <a href="#services">services</a>
-          <a href="#pricing">pricing</a>
-          <a href="#course">course</a>
+          <a href="/#services">services</a>
+          <a href="/#pricing">pricing</a>
+          <a href="/#course">course</a>
           <a href={whatsappHref()} target="_blank" rel="noopener" className="accent">whatsapp</a>
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function Hero() {
             trust you, and contact you on WhatsApp.
           </p>
           <div className="hero-ctas">
-            <a href="#contact" className="btn btn-primary">Book a free consultation</a>
+            <a href="/book" className="btn btn-primary">Book a free consultation</a>
             <a href="#services" className="btn btn-ghost">See my work ↘</a>
           </div>
           <ScanBox />

@@ -313,3 +313,32 @@ section[id] { scroll-margin-top: 76px; }
   .scan input { padding: 0 14px; }
   .scan a { padding: 0 16px; letter-spacing: 0.12em; }
 }
+
+/* ---------- booking planner (/book) ---------- */
+.book { border-bottom: 0; }
+.book-title { margin: 0 0 20px; }
+.book-lede { margin: 0 0 clamp(28px, 4vw, 40px); max-width: 56ch; color: var(--ink-2); }
+.session-tabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.session-tab {
+  display: grid; gap: 6px; text-align: left; cursor: pointer;
+  padding: clamp(18px, 2.4vw, 24px); border-radius: 16px;
+  background: #fff; border: 1.5px solid var(--line-2); color: var(--ink);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.session-tab:hover { border-color: var(--violet-2); }
+.session-tab.is-selected { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(106, 63, 242, 0.14), 0 12px 30px rgba(106, 63, 242, 0.14); }
+.session-meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet); }
+.session-title { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
+.session-desc { font-size: 15px; color: var(--ink-2); }
+.planner { border-radius: 18px; background: #fff; border: 1px solid var(--line-2); overflow: hidden; }
+.planner.is-live { min-height: 640px; }
+.planner-fallback { display: grid; justify-items: start; gap: 14px; padding: clamp(28px, 5vw, 64px); max-width: 640px; }
+.planner-fallback h2 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.05; letter-spacing: -0.03em; }
+.planner-fallback p:not(.eyebrow) { margin: 0; color: var(--ink-2); }
+.planner-fallback .btn { min-height: 52px; padding: 0 28px; font-size: 16px; }
+.book-note { margin: 18px 0 0; font-size: 15px; color: var(--muted); }
+.book-note a { color: var(--violet); }
+@media (max-width: 700px) {
+  .planner.is-live { min-height: 560px; }
+  .planner-fallback .btn { width: 100%; }
+}

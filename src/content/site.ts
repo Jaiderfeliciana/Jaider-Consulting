@@ -46,6 +46,30 @@ export const course = {
   ],
 };
 
+// Online booking planner on /book, powered by Cal.com.
+// Put your Cal.com username here (cal.com/<username>) to turn the planner on.
+// Each session's `slug` must match that event type's link in Cal.com: cal.com/<username>/<slug>.
+// Your available hours, breaks and days off are set in Cal.com under "Availability".
+export const booking = {
+  calUsername: "",
+  sessions: [
+    {
+      slug: "free-consultation",
+      title: "Free consultation",
+      duration: "30 min",
+      price: "Free",
+      description: "We talk about your business and what you need. You leave with clear next steps.",
+    },
+    {
+      slug: "1-on-1",
+      title: "1-on-1 consultation",
+      duration: "1 hour",
+      price: "$100",
+      description: "A deep dive into your business. You get a written, step-by-step plan afterwards.",
+    },
+  ],
+};
+
 export const showPricing = true;
 
 export const stats = [
