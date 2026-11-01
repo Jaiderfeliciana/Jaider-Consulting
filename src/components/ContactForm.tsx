@@ -6,6 +6,8 @@ import { contactTopics, whatsappHref } from "@/content/site";
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
+  const [website, setWebsite] = useState("");
+  const [social, setSocial] = useState("");
   const [topic, setTopic] = useState(contactTopics[0]);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -22,15 +24,20 @@ export default function ContactForm() {
     setSentName(null);
     setName("");
     setContact("");
+    setWebsite("");
+    setSocial("");
     setMessage("");
     setError("");
   }
 
   if (sentName !== null) {
-    const prefill =
-      `Hi Jaider! My name is ${sentName}. I'm interested in: ${topic}` +
-      (message ? `. ${message}` : ".") +
-      ` You can reach me at ${contact.trim()}.`;
+    const prefill = [
+      `Hi Jaider! My name is ${sentName}. I'm interested in: ${topic}.`,
+      message.trim(),
+      website.trim() && `My website: ${website.trim()}`,
+      social.trim() && `My social media: ${social.trim()}`,
+      `You can reach me at ${contact.trim()}.`,
+    ].filter(Boolean).join("\n");
     return (
       <div className="sent">
         <h3>Thanks, {sentName}!</h3>
@@ -51,6 +58,15 @@ export default function ContactForm() {
         WhatsApp or email
         <input value={contact} onChange={(e) => { setContact(e.target.value); setError(""); }} placeholder="+297 ... or name@email.com" />
       </label>
+      <label>
+        <span>Your website <span className="optional">(optional)</span></span>
+        <input value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="yourbusiness.com" inputMode="url" autoComplete="url" autoCapitalize="none" spellCheck={false} />
+      </label>
+      <label>
+        <span>Your social media profile <span className="optional">(optional)</span></span>
+        <input value={social} onChange={(e) => setSocial(e.target.value)} placeholder="@yourbusiness or profile link" autoCapitalize="none" spellCheck={false} />
+      </label>
+      <p className="form-hint">Share your website or socials and I&apos;ll review them before we talk, so I come with ideas that fit your business.</p>
       <label>
         What do you need?
         <select value={topic} onChange={(e) => setTopic(e.target.value)}>

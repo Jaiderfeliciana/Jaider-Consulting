@@ -21,7 +21,7 @@ const channels = [
     icon: icon(<path d="M5 4h3.5l1.5 4-2 1.3a11 11 0 0 0 6.7 6.7L16 14l4 1.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" />),
   },
   {
-    label: "Email", value: contact.email, href: `mailto:${contact.email}`,
+    label: "Email", value: <>{contact.email.split("@")[0]}<wbr />@{contact.email.split("@")[1]}</>, href: `mailto:${contact.email}`,
     icon: icon(<><rect x="3" y="5.5" width="18" height="13" rx="2.5" /><path d="M4 7l8 6 8-6" /></>),
   },
   {
