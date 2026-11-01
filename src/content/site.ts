@@ -72,7 +72,7 @@ export const booking = {
       description: "We talk about your business and what you need. You leave with clear next steps.",
     },
     {
-      slug: "",
+      slug: "15min",
       title: "1-on-1 consultation",
       duration: "1 hour",
       price: "$100",
