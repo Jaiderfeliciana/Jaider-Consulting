@@ -51,7 +51,7 @@ export const course = {
 // Each session's `slug` must match that event type's link in Cal.com: cal.com/<username>/<slug>.
 // Your available hours, breaks and days off are set in Cal.com under "Availability".
 export const booking = {
-  calUsername: "",
+  calUsername: "jaider-feliciana-z9u6nv",
   sessions: [
     {
       slug: "free-consultation",
