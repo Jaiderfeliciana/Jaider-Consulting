@@ -37,6 +37,9 @@ automatically. To turn it on:
 
 Until then the page offers booking through WhatsApp.
 
+The country list in the planner's time zone picker (`src/content/timezones.ts`) is generated from
+the IANA time zone database. To refresh it: `node scripts/generate-timezones.mjs`.
+
 Images live in `src/assets/`. Styling is in `src/app/globals.css`.
 
 ## Project structure
