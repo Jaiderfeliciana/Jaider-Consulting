@@ -16,7 +16,7 @@ export const contact = {
   instagram: { handle: "@felicianajaider", url: "https://www.instagram.com/felicianajaider/" },
   facebook: { handle: "Jaider Feliciana", url: "https://www.facebook.com/share/19hUQv1bGm/" },
   tiktok: { handle: "@felicianajaider", url: "https://www.tiktok.com/@felicianajaider" },
-  location: "Oranjestad, Aruba · Mon–Fri 9:00–18:00",
+  location: "Oranjestad, Aruba · Mon–Fri 17:00–20:00",
 };
 
 const phoneDigits = contact.whatsapp.replace(/[^0-9]/g, "");
