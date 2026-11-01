@@ -5,9 +5,9 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 import { booking, whatsappHref } from "@/content/site";
 
 export default function BookingPlanner() {
-  const [selected, setSelected] = useState(booking.sessions[0].slug);
-  const session = booking.sessions.find((s) => s.slug === selected) ?? booking.sessions[0];
-  const enabled = booking.calUsername.trim() !== "";
+  const [selected, setSelected] = useState(booking.sessions[0].title);
+  const session = booking.sessions.find((s) => s.title === selected) ?? booking.sessions[0];
+  const enabled = booking.calUsername.trim() !== "" && session.slug !== "";
 
   useEffect(() => {
     if (!enabled) return;
@@ -26,12 +26,12 @@ export default function BookingPlanner() {
       <div className="session-tabs" role="radiogroup" aria-label="Choose a session">
         {booking.sessions.map((s) => (
           <button
-            key={s.slug}
+            key={s.title}
             type="button"
             role="radio"
-            aria-checked={s.slug === selected}
-            className={s.slug === selected ? "session-tab is-selected" : "session-tab"}
-            onClick={() => setSelected(s.slug)}
+            aria-checked={s.title === selected}
+            className={s.title === selected ? "session-tab is-selected" : "session-tab"}
+            onClick={() => setSelected(s.title)}
           >
             <span className="session-meta">{s.duration} · {s.price}</span>
             <span className="session-title">{s.title}</span>

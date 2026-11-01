@@ -48,20 +48,21 @@ export const course = {
 
 // Online booking planner on /book, powered by Cal.com.
 // Put your Cal.com username here (cal.com/<username>) to turn the planner on.
-// Each session's `slug` must match that event type's link in Cal.com: cal.com/<username>/<slug>.
+// Each session's `slug` is the end of that event type's link in Cal.com: cal.com/<username>/<slug>.
+// Leave `slug` empty for a session that isn't set up in Cal.com yet; it is then booked via WhatsApp.
 // Your available hours, breaks and days off are set in Cal.com under "Availability".
 export const booking = {
   calUsername: "jaider-feliciana-z9u6nv",
   sessions: [
     {
-      slug: "free-consultation",
+      slug: "30min",
       title: "Free consultation",
       duration: "30 min",
       price: "Free",
       description: "We talk about your business and what you need. You leave with clear next steps.",
     },
     {
-      slug: "1-on-1",
+      slug: "",
       title: "1-on-1 consultation",
       duration: "1 hour",
       price: "$100",
