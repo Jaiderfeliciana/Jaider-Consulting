@@ -55,7 +55,7 @@ export default function BookingPlanner() {
             <h2>Book your {session.title.toLowerCase()} on WhatsApp</h2>
             <p>Send me a message with a day and time that works for you, and I&apos;ll confirm within 24 hours.</p>
             <a
-              href={whatsappHref(`Hi Jaider! I'd like to book a ${session.title} (${session.duration}).`)}
+              href={whatsappHref(`Hi Jaider! I'd like to book a ${session.title.toLowerCase()} (${session.duration}).`)}
               target="_blank"
               rel="noopener"
               className="btn btn-primary"
