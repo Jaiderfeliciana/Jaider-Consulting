@@ -380,3 +380,83 @@ section[id] { scroll-margin-top: 76px; }
 /* Room at the end of the page so the button never covers the footer links. */
 .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
 @media print { .wa-float { display: none; } }
+
+/* ---------- client service agreement ---------- */
+.agreement-page { border-bottom: 0; padding-top: clamp(28px, 5vw, 64px); }
+.agreement-wrap { max-width: 860px; display: grid; gap: 24px; }
+.agreement-doc {
+  padding: clamp(24px, 5vw, 56px); border-radius: 20px; background: #fff; color: var(--ink);
+  border: 1px solid var(--line-2); box-shadow: 0 24px 60px rgba(26, 20, 60, 0.1); font-size: 16px;
+}
+.doc-head { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 2px solid transparent; border-image: var(--gradient) 1; text-align: center; }
+.agreement-doc .doc-brand { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 4vw, 34px); letter-spacing: 0.06em; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.agreement-doc h1 { margin: 6px 0 4px; font-family: var(--font-display); font-weight: 500; font-size: clamp(20px, 3vw, 26px); letter-spacing: 0.04em; text-transform: uppercase; }
+.doc-site { margin: 0; font-size: 14px; color: var(--muted); }
+.doc-site a { color: var(--violet); }
+.doc-terms { margin: 22px 0; padding-left: 0; list-style: none; counter-reset: term; display: grid; gap: 16px; }
+.doc-terms > li { counter-increment: term; }
+.agreement-doc h2 { margin: 0 0 6px; font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+.doc-terms > li > h2::before { content: counter(term) ". "; color: var(--violet); }
+.agreement-doc p { margin: 0 0 8px; line-height: 1.6; color: var(--ink-2); }
+.doc-terms ul { margin: 0; padding-left: 20px; color: var(--ink-2); line-height: 1.6; }
+.doc-law { font-style: italic; }
+.doc-block { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line-2); }
+.doc-block dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 10px 0 0; }
+.doc-block dt { color: var(--muted); }
+.doc-block dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; border-bottom: 1px dotted var(--line-2); }
+.doc-signatures { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line-2); }
+.doc-signatures img { display: block; width: 100%; max-width: 320px; height: 110px; object-fit: contain; object-position: left center; border-bottom: 1.5px solid var(--ink); margin: 8px 0; }
+.doc-missing { height: 110px; display: flex; align-items: center; margin: 8px 0 !important; border-bottom: 1.5px dashed var(--line-2); color: var(--muted) !important; font-style: italic; }
+.doc-signatures p { margin: 0 0 2px; font-size: 14px; }
+.doc-date { color: var(--muted) !important; font-size: 13px !important; }
+.doc-meta { margin-top: 18px !important; font-family: var(--font-mono); font-size: 12px !important; color: var(--muted) !important; }
+.doc-tagline { margin: 28px 0 0 !important; text-align: center; font-family: var(--font-display); font-weight: 600; font-size: 18px; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent !important; }
+
+.sign-form { padding: clamp(22px, 4vw, 40px); border-radius: 20px; background: #fff; border: 1px solid var(--line-2); box-shadow: 0 24px 60px rgba(26, 20, 60, 0.08); display: grid; gap: 16px; }
+.sign-form h2 { margin: 6px 0 0; font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
+.sign-form > p { margin: 0; color: var(--ink-2); }
+.sign-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.sign-form label { display: grid; gap: 6px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sign-form input:not([type="checkbox"]), .sign-form select { min-height: 48px; padding: 10px 14px; background: var(--bg); border: 1px solid rgba(26, 20, 60, 0.18); border-radius: 10px; color: var(--ink); font-family: var(--font-body); font-size: 16px; letter-spacing: 0; text-transform: none; }
+.sign-form input:focus, .sign-form select:focus { outline: none; border-color: var(--violet-2); }
+.sign-form .is-fixed { background: var(--bg-alt); color: var(--ink-2); }
+.sign-form .accept { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-body); font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--ink); cursor: pointer; }
+.sign-form .accept input { width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--violet); flex: 0 0 auto; }
+.sign-submit { min-height: 56px; font-size: 17px; border: 0; cursor: pointer; }
+.sign-submit:disabled { opacity: 0.6; cursor: wait; }
+.sign-note { font-size: 13px; color: var(--muted) !important; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.sig { display: grid; gap: 6px; }
+.sig-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sig-canvas { width: 100%; height: 170px; border-radius: 12px; background: #fff; border: 1.5px dashed rgba(106, 63, 242, 0.45); touch-action: none; cursor: crosshair; }
+.sig-foot { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); }
+.sig-foot button { min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(26, 20, 60, 0.2); background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
+
+.signed-banner { padding: clamp(22px, 4vw, 36px); border-radius: 20px; background: var(--night); color: #fff; display: grid; gap: 10px; }
+.signed-banner .eyebrow { color: var(--pink); }
+.signed-banner h2 { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(26px, 4vw, 36px); color: #fff; }
+.signed-banner p { margin: 0; color: #ded9f2; }
+.signed-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.signed-actions .btn { min-height: 50px; padding: 0 22px; font-size: 16px; border: 0; cursor: pointer; }
+.signed-banner .btn-ghost { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
+
+@media (max-width: 640px) {
+  .sign-grid { grid-template-columns: minmax(0, 1fr); }
+  .doc-block dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .doc-block dd { margin-bottom: 8px; }
+  .signed-actions .btn { width: 100%; }
+}
+
+/* Printing / saving as PDF: only the document. */
+@media print {
+  @page { margin: 16mm; }
+  body, .admin { background: #fff !important; }
+  .header, .footer, .wa-float, .no-print, .topbar, .rail, .page-head, .signed-banner, .sign-form { display: none !important; }
+  .panel { display: block !important; }
+  .section, .panel-main, .agreement-page { padding: 0 !important; }
+  .agreement-doc { border: 0 !important; box-shadow: none !important; padding: 0 !important; font-size: 12pt; }
+  .agreement-doc, .agreement-doc * { color: #12111a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .doc-brand, .doc-tagline { color: #6a3ff2 !important; background: none !important; }
+  .doc-signatures { break-inside: avoid; }
+}

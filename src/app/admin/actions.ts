@@ -124,3 +124,31 @@ export async function removeTask(form: FormData) {
   await data.deleteTask(text(form, "id", 64));
   revalidatePath("/admin", "layout");
 }
+
+// ---------- agreements ----------
+
+export async function countersignAgreement(_prev: { error: string }, form: FormData) {
+  await requireAdmin();
+  const id = text(form, "id", 64);
+  const name = text(form, "name", 120);
+  const signature = String(form.get("signature") ?? "");
+  if (!name) return { error: "Enter your name as authorized representative." };
+  if (!signature.startsWith("data:image/png;base64,") || signature.length < 1500 || signature.length > 400_000) {
+    return { error: "Please sign inside the box." };
+  }
+  const found = await data.getAgreement(id);
+  if (!found) return { error: "This agreement no longer exists." };
+  await data.saveAgreement(
+    { ...found.agreement, provider: { name, signedAt: new Date().toISOString() } },
+    { who: "provider", image: signature },
+  );
+  revalidatePath("/admin", "layout");
+  return { error: "" };
+}
+
+export async function removeAgreement(form: FormData) {
+  await requireAdmin();
+  await data.deleteAgreement(text(form, "id", 64));
+  revalidatePath("/admin", "layout");
+  redirect("/admin/agreements");
+}

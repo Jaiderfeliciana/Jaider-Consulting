@@ -6,6 +6,7 @@ export const adminPages = [
   { href: "/admin/earnings", label: "Earnings", icon: "dollar", tint: "#e8a33d" },
   { href: "/admin/visitors", label: "Visitors", icon: "eye", tint: "#4ade80" },
   { href: "/admin/tasks", label: "Tasks", icon: "check", tint: "#f472b6" },
+  { href: "/admin/agreements", label: "Agreements", icon: "folder", tint: "#c084fc" },
   { href: "/admin/setup", label: "Setup", icon: "settings", tint: "#60a5fa" },
 ];
 

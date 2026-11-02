@@ -20,6 +20,7 @@ const paths: Record<string, string> = {
   user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0",
   mail: "M3 6h18v12H3zM3 7l9 6 9-6",
   chevron: "M6 9l6 6 6-6",
+  pen: "M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z",
 };
 
 export default function Icon({ name, size = 20 }: { name: keyof typeof paths | string; size?: number }) {

@@ -42,6 +42,14 @@ the IANA time zone database. To refresh it: `node scripts/generate-timezones.mjs
 
 Images live in `src/assets/`. Styling is in `src/app/globals.css`.
 
+## Client service agreement (/agreement)
+
+Clients read the agreement, fill in their details and sign with a finger or mouse. Signed
+agreements appear in the admin panel under **Agreements**, where you countersign them and can
+print or save them as PDF. Create a personal link there with the service and price filled in.
+The terms are in `src/content/agreement.ts`; when you change them, also change `version`.
+Signing needs the database (see below).
+
 ## Admin panel (/admin)
 
 A private dashboard for running the business: Cal.com bookings, clients, earnings, tasks,

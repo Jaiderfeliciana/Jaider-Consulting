@@ -122,4 +122,53 @@ export async function deleteTask(id: string) {
   await command("HDEL", TASKS, id);
 }
 
+
+// ---------- agreements ----------
+
+export type Agreement = {
+  id: string;
+  version: string;
+  fullName: string;
+  company: string;
+  email: string;
+  service: string;
+  price: string;
+  signedAt: string;
+  ip: string;
+  userAgent: string;
+  provider?: { name: string; signedAt: string };
+};
+
+const AGREEMENTS = "jf:agreements";
+// Signature images are stored separately so the list stays small.
+const sigKey = (id: string, who: "client" | "provider") => `jf:sig:${id}:${who}`;
+
+export async function getAgreements() {
+  return (await readHash<Agreement>(AGREEMENTS)).sort((a, b) => b.signedAt.localeCompare(a.signedAt));
+}
+
+export async function getAgreement(id: string) {
+  const [raw, client, provider] = await pipeline([
+    ["HGET", AGREEMENTS, id], ["GET", sigKey(id, "client")], ["GET", sigKey(id, "provider")],
+  ]) as [string | null, string | null, string | null];
+  if (!raw) return null;
+  return { agreement: JSON.parse(raw) as Agreement, signatures: { client, provider } };
+}
+
+export async function saveAgreement(a: Agreement, signature?: { who: "client" | "provider"; image: string }) {
+  const cmds: (string | number)[][] = [["HSET", AGREEMENTS, a.id, JSON.stringify(a)]];
+  if (signature) cmds.push(["SET", sigKey(a.id, signature.who), signature.image]);
+  await pipeline(cmds);
+}
+
+export async function deleteAgreement(id: string) {
+  await pipeline([["HDEL", AGREEMENTS, id], ["DEL", sigKey(id, "client")], ["DEL", sigKey(id, "provider")]]);
+}
+
+// At most `max` actions per key per hour (used to stop the public form being flooded).
+export async function underLimit(key: string, max: number) {
+  const [count] = await pipeline([["INCR", `jf:limit:${key}`], ["EXPIRE", `jf:limit:${key}`, 3600, "NX"]]) as [number];
+  return count <= max;
+}
+
 export { isDbConfigured };
