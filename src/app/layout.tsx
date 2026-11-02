@@ -8,7 +8,6 @@ import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/500.css";
 import "./globals.css";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "Jaider Feliciana — Websites, Social Media & Ads in Aruba",
@@ -28,10 +27,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <WhatsAppFloat />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -42,13 +42,30 @@ the IANA time zone database. To refresh it: `node scripts/generate-timezones.mjs
 
 Images live in `src/assets/`. Styling is in `src/app/globals.css`.
 
+## Admin panel (/admin)
+
+A private dashboard for running the business: Cal.com bookings, clients, earnings and
+website visitors. Everything is set in the Vercel project (**Settings → Environment Variables**),
+then redeploy:
+
+| Setting | What it does |
+| --- | --- |
+| `ADMIN_PASSWORD` | Your login password. Without it, nobody can log in. |
+| Upstash Redis (Vercel **Storage** tab) | Stores clients, payments and visitor counts. Connecting it adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` automatically. |
+| `CAL_API_KEY` | Reads bookings from Cal.com (Cal.com → Settings → Developer → API keys). |
+
+The **Setup** page inside the panel shows what is connected. The monthly earnings goal is in
+`src/lib/admin/config.ts`.
+
 ## Project structure
 
 | Path | What it is |
 | --- | --- |
-| `src/app/` | Page layout, metadata, global styles, favicon |
+| `src/app/(site)/` | The public pages (home, booking planner) |
+| `src/app/` | Root layout, metadata, global styles, favicon |
 | `src/components/` | One component per page section |
 | `src/content/site.ts` | All text, prices and contact details |
+| `src/app/admin/`, `src/lib/admin/` | The admin panel |
 | `src/assets/` | Photos and service images |
 | `design/` | Original design export (reference only, not deployed) |
 
