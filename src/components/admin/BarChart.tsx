@@ -9,7 +9,7 @@ type Bar = { label: string; value: number; detail: string };
 const usd = (n: number) => (n >= 1000 ? `$${n / 1000}k` : `$${n}`);
 
 // Single-series bar chart of dollar amounts: one violet bar per period, with a hover/focus tooltip on each bar.
-export default function BarChart({ bars, summary }: { bars: Bar[]; summary: string }) {
+export default function BarChart({ bars, summary, average = false }: { bars: Bar[]; summary: string; average?: boolean }) {
   const [ref, width] = useWidth<HTMLDivElement>();
   const [active, setActive] = useState<number | null>(null);
   const height = 220, top = 12, bottom = 28, left = 52;
@@ -20,6 +20,8 @@ export default function BarChart({ bars, summary }: { bars: Bar[]; summary: stri
   const barW = Math.min(36, Math.max(6, band - 8));
   const y = (v: number) => top + plotH - (v / max) * plotH;
   const tip = active !== null ? bars[active] : null;
+  const labelEvery = Math.max(1, Math.ceil(bars.length / Math.max(2, Math.floor(plotW / 46))));
+  const mean = bars.reduce((s, b) => s + b.value, 0) / (bars.length || 1);
 
   return (
     <div ref={ref} className="chart" onPointerLeave={() => setActive(null)}>
@@ -38,7 +40,7 @@ export default function BarChart({ bars, summary }: { bars: Bar[]; summary: stri
           const path = h > 0
             ? `M${x},${y(0)} V${yTop + r} Q${x},${yTop} ${x + r},${yTop} H${x + barW - r} Q${x + barW},${yTop} ${x + barW},${yTop + r} V${y(0)} Z`
             : "";
-          const showLabel = bars.length <= 12 || i % 2 === bars.length % 2;
+          const showLabel = (bars.length - 1 - i) % labelEvery === 0;
           return (
             <g key={b.label}>
               {path && <path d={path} className={active === i ? "chart-bar is-active" : "chart-bar"} />}
@@ -51,6 +53,12 @@ export default function BarChart({ bars, summary }: { bars: Bar[]; summary: stri
             </g>
           );
         })}
+        {average && mean > 0 && (
+          <g>
+            <line x1={left} x2={width} y1={y(mean)} y2={y(mean)} className="chart-average" />
+            <text x={width} y={y(mean) - 6} className="chart-axis" textAnchor="end">avg {usd(Math.round(mean))}</text>
+          </g>
+        )}
         <line x1={left} x2={width} y1={y(0)} y2={y(0)} className="chart-baseline" />
       </svg>
       {tip && active !== null && (

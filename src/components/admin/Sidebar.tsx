@@ -2,55 +2,28 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "@/components/Logo";
 import Icon from "./Icon";
+import { adminPages, isActive } from "./nav";
 import { logout } from "@/app/admin/actions";
 
-const links = [
-  { href: "/admin", label: "Dashboard", icon: "dashboard" },
-  { href: "/admin/bookings", label: "Bookings", icon: "calendar" },
-  { href: "/admin/clients", label: "Clients", icon: "users" },
-  { href: "/admin/earnings", label: "Earnings", icon: "dollar" },
-  { href: "/admin/visitors", label: "Visitors", icon: "eye" },
-  { href: "/admin/setup", label: "Setup", icon: "settings" },
-];
-
+// Narrow strip of colorful page icons on the left (desktop only).
 export default function Sidebar() {
   const path = usePathname();
   return (
-    <aside className="side">
-      <div className="side-brand">
-        <span className="side-avatar"><Logo id="jf-logo-admin" /></span>
-        <div>
-          <p className="side-name">Jaider Feliciana</p>
-          <p className="side-role">Admin</p>
-        </div>
-      </div>
-      <nav className="side-nav">
-        {links.map((l) => {
-          const active = l.href === "/admin" ? path === "/admin" : path.startsWith(l.href);
-          return (
-            <Link key={l.href} href={l.href} className={active ? "is-active" : undefined} aria-current={active ? "page" : undefined}>
-              <Icon name={l.icon} size={21} />
-              {l.label}
-            </Link>
-          );
-        })}
+    <aside className="rail" aria-label="Pages">
+      <nav className="rail-nav">
+        {adminPages.map((p) => (
+          <Link key={p.href} href={p.href} title={p.label} aria-label={p.label}
+            className={isActive(p.href, path) ? "rail-tile is-active" : "rail-tile"}
+            style={{ color: p.tint, background: `${p.tint}24`, boxShadow: isActive(p.href, path) ? `0 0 0 2px ${p.tint}, 0 0 22px ${p.tint}66` : undefined }}>
+            <Icon name={p.icon} size={20} />
+          </Link>
+        ))}
       </nav>
-      <div className="side-card">
-        <Icon name="rocket" size={30} />
-        <p className="side-card-title">Your booking page</p>
-        <p>Share it so clients can book a session themselves.</p>
-        <a href="/book" target="_blank" rel="noopener" className="side-card-btn">Open booking page</a>
-      </div>
-      <div className="side-user">
-        <span className="side-user-avatar">JF</span>
-        <div>
-          <p className="side-user-name">Jaider Feliciana</p>
-          <p className="side-user-role">Administrator</p>
-        </div>
+      <div className="rail-foot">
+        <span className="rail-avatar" title="Jaider Feliciana">JF</span>
         <form action={logout}>
-          <button type="submit" aria-label="Log out" title="Log out"><Icon name="logout" size={18} /></button>
+          <button type="submit" className="rail-tile rail-logout" title="Log out" aria-label="Log out"><Icon name="logout" size={20} /></button>
         </form>
       </div>
     </aside>

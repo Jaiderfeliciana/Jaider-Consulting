@@ -1,6 +1,7 @@
 import { PageHead } from "@/components/admin/Bits";
 import { isCalConfigured } from "@/lib/admin/cal";
 import { isDbConfigured } from "@/lib/admin/data";
+import { isAssistantConfigured } from "@/lib/admin/assistant";
 
 function Step({ done, title, children }: { done: boolean; title: string; children: React.ReactNode }) {
   return (
@@ -32,6 +33,14 @@ export default function SetupPage() {
           <li>In Vercel, open <strong>Settings → Environment Variables</strong> and add <code>CAL_API_KEY</code> with that key as the value.</li>
           <li>Redeploy (Deployments → latest → Redeploy).</li>
         </ol>
+      </Step>
+      <Step done={isAssistantConfigured()} title="Grok AI assistant">
+        <ol>
+          <li>Go to <strong>console.x.ai</strong>, sign in, and add a little credit (the assistant usually costs cents per question).</li>
+          <li>Open <strong>API Keys</strong> and create a key.</li>
+          <li>In Vercel, add it as <code>XAI_API_KEY</code> under Settings → Environment Variables, then redeploy.</li>
+        </ol>
+        <p className="setup-note">When you ask a question, a summary of your clients (names, businesses, services, status and notes), payments, tasks and sessions is sent to xAI so Grok can answer. Phone numbers, emails and links are not sent.</p>
       </Step>
       <Step done title="Admin password">
         <p>Your password is the <code>ADMIN_PASSWORD</code> environment variable in Vercel. To change it, edit it there and redeploy; everyone who is logged in will be logged out.</p>

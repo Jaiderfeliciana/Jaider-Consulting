@@ -96,3 +96,31 @@ export async function removePayment(form: FormData) {
   await data.deletePayment(text(form, "id", 64));
   revalidatePath("/admin", "layout");
 }
+
+// ---------- tasks ----------
+
+export async function addTask(form: FormData) {
+  await requireAdmin();
+  const title = text(form, "title", 160);
+  if (!title) return;
+  const due = text(form, "due", 10);
+  await data.saveTask({
+    id: randomUUID(), title, due: /^\d{4}-\d{2}-\d{2}$/.test(due) ? due : "", done: false, createdAt: new Date().toISOString(),
+  });
+  revalidatePath("/admin", "layout");
+}
+
+export async function toggleTask(form: FormData) {
+  await requireAdmin();
+  const id = text(form, "id", 64);
+  const task = (await data.getTasks()).find((t) => t.id === id);
+  if (!task) return;
+  await data.saveTask({ ...task, done: !task.done });
+  revalidatePath("/admin", "layout");
+}
+
+export async function removeTask(form: FormData) {
+  await requireAdmin();
+  await data.deleteTask(text(form, "id", 64));
+  revalidatePath("/admin", "layout");
+}

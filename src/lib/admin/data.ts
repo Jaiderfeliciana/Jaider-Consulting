@@ -95,4 +95,31 @@ export async function getVisits(days: number) {
   };
 }
 
+
+// ---------- tasks ----------
+
+export type Task = {
+  id: string;
+  title: string;
+  due: string; // YYYY-MM-DD, or "" for no date
+  done: boolean;
+  createdAt: string;
+};
+
+const TASKS = "jf:tasks";
+
+// Open tasks first (soonest due date first, undated last), then finished ones.
+export async function getTasks() {
+  return (await readHash<Task>(TASKS)).sort((a, b) =>
+    Number(a.done) - Number(b.done) || (a.due || "9999").localeCompare(b.due || "9999") || a.createdAt.localeCompare(b.createdAt));
+}
+
+export async function saveTask(task: Task) {
+  await command("HSET", TASKS, task.id, JSON.stringify(task));
+}
+
+export async function deleteTask(id: string) {
+  await command("HDEL", TASKS, id);
+}
+
 export { isDbConfigured };

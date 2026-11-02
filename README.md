@@ -44,8 +44,8 @@ Images live in `src/assets/`. Styling is in `src/app/globals.css`.
 
 ## Admin panel (/admin)
 
-A private dashboard for running the business: Cal.com bookings, clients, earnings and
-website visitors. Everything is set in the Vercel project (**Settings → Environment Variables**),
+A private dashboard for running the business: Cal.com bookings, clients, earnings, tasks,
+website visitors and a Grok AI assistant. Everything is set in the Vercel project (**Settings → Environment Variables**),
 then redeploy:
 
 | Setting | What it does |
@@ -53,9 +53,9 @@ then redeploy:
 | `ADMIN_PASSWORD` | Your login password. Without it, nobody can log in. |
 | Upstash Redis (Vercel **Storage** tab) | Stores clients, payments and visitor counts. Connecting it adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` automatically. |
 | `CAL_API_KEY` | Reads bookings from Cal.com (Cal.com → Settings → Developer → API keys). |
+| `XAI_API_KEY` | Turns on the Grok assistant (console.x.ai → API Keys). Optional: `XAI_MODEL` to choose the model. |
 
-The **Setup** page inside the panel shows what is connected. The monthly earnings goal is in
-`src/lib/admin/config.ts`.
+The **Setup** page inside the panel shows what is connected.
 
 ## Project structure
 

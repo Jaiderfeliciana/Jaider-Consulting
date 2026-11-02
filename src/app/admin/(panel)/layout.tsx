@@ -8,11 +8,9 @@ export default async function PanelLayout({ children }: { children: React.ReactN
   await requireAdmin();
   return (
     <div className="panel">
+      <Topbar />
       <Sidebar />
-      <div className="panel-body">
-        <Topbar />
-        <main className="panel-main">{children}</main>
-      </div>
+      <main className="panel-main">{children}</main>
     </div>
   );
 }
