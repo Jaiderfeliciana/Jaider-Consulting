@@ -17,7 +17,7 @@ function Step({ done, title, children }: { done: boolean; title: string; childre
 export default function SetupPage() {
   return (
     <>
-      <PageHead title="Setup" sub="Connect each part once. After changing settings in Vercel, redeploy for them to take effect." />
+      <PageHead icon="settings" title="Setup" sub="Connect each part once. After changing settings in Vercel, redeploy for them to take effect." />
       <Step done={isDbConfigured()} title="Database — clients, earnings & visitors">
         <ol>
           <li>Open your project on <strong>vercel.com</strong> and go to the <strong>Storage</strong> tab.</li>

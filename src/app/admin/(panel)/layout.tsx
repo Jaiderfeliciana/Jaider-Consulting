@@ -1,4 +1,5 @@
 import Sidebar from "@/components/admin/Sidebar";
+import Topbar from "@/components/admin/Topbar";
 import { requireAdmin } from "@/lib/admin/auth";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +9,10 @@ export default async function PanelLayout({ children }: { children: React.ReactN
   return (
     <div className="panel">
       <Sidebar />
-      <main className="panel-main">{children}</main>
+      <div className="panel-body">
+        <Topbar />
+        <main className="panel-main">{children}</main>
+      </div>
     </div>
   );
 }

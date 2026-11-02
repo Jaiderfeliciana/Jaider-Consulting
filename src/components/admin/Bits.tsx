@@ -1,13 +1,15 @@
 import Link from "next/link";
+import Icon from "./Icon";
 
-export function PageHead({ title, sub, action }: { title: string; sub?: string; action?: React.ReactNode }) {
+export function PageHead({ title, sub, action, icon = "chart" }: { title: string; sub?: string; action?: React.ReactNode; icon?: string }) {
   return (
     <header className="page-head">
-      <div>
+      <span className="page-icon"><Icon name={icon} size={26} /></span>
+      <div className="page-title">
         <h1>{title}</h1>
         {sub && <p>{sub}</p>}
       </div>
-      {action}
+      {action && <div className="page-action">{action}</div>}
     </header>
   );
 }

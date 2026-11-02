@@ -6,17 +6,18 @@ import { fromDb } from "@/lib/admin/load";
 import { adminConfig } from "@/lib/admin/config";
 import { contactTopics } from "@/content/site";
 
-export default async function ClientsPage() {
+export default async function ClientsPage({ searchParams }: { searchParams: Promise<{ add?: string }> }) {
+  const { add } = await searchParams;
   const clients = await fromDb(getClients);
   if (!("data" in clients)) {
-    return <><PageHead title="Clients" /><NotConnected what="The database" error={"error" in clients ? clients.error : undefined} /></>;
+    return <><PageHead icon="users" title="Clients" /><NotConnected what="The database" error={"error" in clients ? clients.error : undefined} /></>;
   }
   const list = clients.data;
   return (
     <>
-      <PageHead title="Clients" sub={`${list.length} client${list.length === 1 ? "" : "s"} · ${adminConfig.clientStatuses.map((s) => `${list.filter((c) => c.status === s).length} ${s.toLowerCase()}`).join(" · ")}`} />
+      <PageHead icon="users" title="Clients" sub={`${list.length} client${list.length === 1 ? "" : "s"} · ${adminConfig.clientStatuses.map((s) => `${list.filter((c) => c.status === s).length} ${s.toLowerCase()}`).join(" · ")}`} />
 
-      <details className="card add-card" open={list.length === 0}>
+      <details className="card add-card" open={list.length === 0 || add === "1"} id="add">
         <summary>+ Add a client</summary>
         <form action={addClient} className="a-form">
           <label>Name<input name="name" required placeholder="Maria Croes" /></label>

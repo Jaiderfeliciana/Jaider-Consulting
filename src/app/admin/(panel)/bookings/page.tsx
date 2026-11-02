@@ -27,12 +27,12 @@ function Table({ rows, empty }: { rows: Booking[]; empty: string }) {
 export default async function BookingsPage() {
   const manage = <a href="https://app.cal.com/bookings/upcoming" target="_blank" rel="noopener" className="a-btn a-btn-ghost">Manage in Cal.com ↗</a>;
   if (!isCalConfigured()) {
-    return <><PageHead title="Bookings" action={manage} /><NotConnected what="Cal.com bookings" /></>;
+    return <><PageHead icon="calendar" title="Bookings" action={manage} /><NotConnected what="Cal.com bookings" /></>;
   }
   const { upcoming, past, error } = await getBookings();
   return (
     <>
-      <PageHead title="Bookings" sub="Sessions booked through your website planner." action={manage} />
+      <PageHead icon="calendar" title="Bookings" sub="Sessions booked through your website planner." action={manage} />
       {error ? <NotConnected what="Cal.com" error={error} /> : (
         <>
           <div className="card"><h2>Upcoming ({upcoming.length})</h2><Table rows={upcoming} empty="No upcoming sessions." /></div>

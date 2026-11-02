@@ -7,13 +7,13 @@ import { monthKey, monthLabel, shortDate } from "@/lib/admin/dates";
 export default async function VisitorsPage() {
   const visits = await fromDb(() => getVisits(90));
   if (!("data" in visits)) {
-    return <><PageHead title="Visitors" /><NotConnected what="Visitor counting" error={"error" in visits ? visits.error : undefined} /></>;
+    return <><PageHead icon="eye" title="Visitors" /><NotConnected what="Visitor counting" error={"error" in visits ? visits.error : undefined} /></>;
   }
   const { days, topPages } = visits.data;
   const total = (n: number, k: "visitors" | "views") => days.slice(-n).reduce((s, d) => s + d[k], 0);
   return (
     <>
-      <PageHead title="Visitors" sub="Counted on your website, without cookies or personal data." />
+      <PageHead icon="eye" title="Visitors" sub="Counted on your website, without cookies or personal data." />
       <section className="stats-row">
         <Stat dark label="Today" value={String(days[days.length - 1].visitors)} note={`${days[days.length - 1].views} page views`} />
         <Stat label="Last 7 days" value={String(total(7, "visitors"))} note={`${total(7, "views")} page views`} />

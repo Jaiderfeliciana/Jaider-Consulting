@@ -8,7 +8,7 @@ import { dayKey, monthKey, money, shortDate } from "@/lib/admin/dates";
 export default async function EarningsPage() {
   const [payments, clients] = await Promise.all([fromDb(getPayments), fromDb(getClients)]);
   if (!("data" in payments)) {
-    return <><PageHead title="Earnings" /><NotConnected what="The database" error={"error" in payments ? payments.error : undefined} /></>;
+    return <><PageHead icon="dollar" title="Earnings" /><NotConnected what="The database" error={"error" in payments ? payments.error : undefined} /></>;
   }
   const list = payments.data;
   const month = monthKey(), year = month.slice(0, 4);
@@ -17,7 +17,7 @@ export default async function EarningsPage() {
 
   return (
     <>
-      <PageHead title="Earnings" sub="Record every payment you receive; the overview adds them up." />
+      <PageHead icon="dollar" title="Earnings" sub="Record every payment you receive; the overview adds them up." />
       <section className="stats-row stats-3">
         <Stat dark label="This month" value={money(sum(month))} />
         <Stat label="This year" value={money(sum(year))} />
