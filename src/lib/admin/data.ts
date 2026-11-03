@@ -118,6 +118,10 @@ export async function saveTask(task: Task) {
   await command("HSET", TASKS, task.id, JSON.stringify(task));
 }
 
+export async function saveTasks(tasks: Task[]) {
+  if (tasks.length) await pipeline(tasks.map((t) => ["HSET", TASKS, t.id, JSON.stringify(t)]));
+}
+
 export async function deleteTask(id: string) {
   await command("HDEL", TASKS, id);
 }

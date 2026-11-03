@@ -110,6 +110,27 @@ export async function addTask(form: FormData) {
   revalidatePath("/admin", "layout");
 }
 
+// Adds many tasks at once: one per line, optionally "Task title | YYYY-MM-DD".
+// Lines matching a task that is still open are skipped, so pasting a list twice doesn't duplicate it.
+export async function addTasksBulk(_prev: { message: string }, form: FormData) {
+  await requireAdmin();
+  const fallbackDue = text(form, "due", 10);
+  const open = new Set((await data.getTasks()).filter((t) => !t.done).map((t) => t.title.toLowerCase()));
+  const now = new Date().toISOString();
+  const tasks: data.Task[] = [];
+  for (const line of String(form.get("lines") ?? "").split(/\r?\n/).slice(0, 300)) {
+    const [rawTitle, rawDue = ""] = line.split("|");
+    const title = rawTitle.trim().slice(0, 160);
+    if (!title || open.has(title.toLowerCase())) continue;
+    open.add(title.toLowerCase());
+    const due = rawDue.trim() || fallbackDue;
+    tasks.push({ id: randomUUID(), title, due: /^\d{4}-\d{2}-\d{2}$/.test(due) ? due : "", done: false, createdAt: now });
+  }
+  await data.saveTasks(tasks);
+  revalidatePath("/admin", "layout");
+  return { message: tasks.length ? `Added ${tasks.length} task${tasks.length === 1 ? "" : "s"}.` : "No new tasks to add." };
+}
+
 export async function toggleTask(form: FormData) {
   await requireAdmin();
   const id = text(form, "id", 64);

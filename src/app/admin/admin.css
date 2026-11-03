@@ -363,3 +363,12 @@
 @media (max-width: 760px) { .lm-row { grid-template-columns: minmax(0, 1fr); } }
 .admin .agreement-doc h1, .admin .agreement-doc h2 { color: var(--ink); }
 .admin .agreement-doc a { color: var(--violet); }
+.bulk { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--a-line); }
+.bulk summary { cursor: pointer; color: #c4b5fd; font-family: var(--font-display); list-style: none; }
+.bulk summary::-webkit-details-marker { display: none; }
+.bulk[open] summary { margin-bottom: 12px; }
+.bulk-tasks textarea { font-family: var(--font-mono); font-size: 14px; }
+.bulk-tasks label:nth-of-type(2) input { max-width: 220px; }
+.bulk-hint { margin: 0; font-size: 13px; }
+.bulk-foot { display: flex; align-items: center; gap: 14px; }
+.bulk-foot span { color: var(--a-green); font-size: 14px; }

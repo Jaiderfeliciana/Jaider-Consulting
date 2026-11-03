@@ -1,5 +1,7 @@
 import { NotConnected, PageHead } from "@/components/admin/Bits";
 import { AddTaskForm, TaskRows } from "@/components/admin/TaskList";
+import BulkTasks from "@/components/admin/BulkTasks";
+import { dayKey } from "@/lib/admin/dates";
 import { getTasks } from "@/lib/admin/data";
 import { fromDb } from "@/lib/admin/load";
 
@@ -15,6 +17,10 @@ export default async function TasksPage() {
       <div className="card">
         <h2>Add a task</h2>
         <AddTaskForm />
+        <details className="bulk" id="bulk">
+          <summary>Add several tasks at once</summary>
+          <BulkTasks today={dayKey()} />
+        </details>
       </div>
       <div className="card">
         <h2>To do</h2>
