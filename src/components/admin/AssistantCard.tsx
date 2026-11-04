@@ -32,7 +32,7 @@ export default function AssistantCard({ connected }: { connected: boolean }) {
       <p className="assistant-hi">Hi, Jaider 👋</p>
       <h2>How can I help you?</h2>
       {!connected ? (
-        <p className="assistant-off">Connect Grok on the <a href="/admin/setup">Setup</a> page to use the assistant.</p>
+        <p className="assistant-off">Connect Grok on the <a href="/admin/setup">Integrations</a> page to use the assistant.</p>
       ) : (
         <>
           <div className="assistant-chips">

@@ -19,8 +19,8 @@ export function NotConnected({ what, error }: { what: string; error?: string }) 
   return (
     <div className="not-connected">
       <p><strong>{error ? `${what}: something went wrong` : `${what} isn't connected yet`}</strong></p>
-      <p>{error ?? "Follow the steps on the Setup page to switch it on."}</p>
-      <Link href="/admin/setup" className="a-btn a-btn-ghost">Open setup</Link>
+      <p>{error ?? "Follow the steps on the Integrations page to switch it on."}</p>
+      <Link href="/admin/setup" className="a-btn a-btn-ghost">Open Integrations</Link>
     </div>
   );
 }

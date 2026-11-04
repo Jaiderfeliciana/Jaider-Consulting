@@ -8,7 +8,7 @@ export default async function VisitorsPage() {
   const [prevMonth, thisMonth] = lastMonths(2);
   const visits = await fromDb(() => Promise.all([getVisits(90), getGoals(thisMonth), getGoals(prevMonth)]));
   if (!("data" in visits)) {
-    return <><PageHead icon="eye" title="Visitors" /><NotConnected what="Visitor counting" error={"error" in visits ? visits.error : undefined} /></>;
+    return <><PageHead icon="eye" title="Analytics" /><NotConnected what="Visitor counting" error={"error" in visits ? visits.error : undefined} /></>;
   }
   const [{ days, topPages }, goals, prevGoals] = visits.data;
   const monthVisitors = days.filter((d) => d.day.startsWith(thisMonth)).reduce((s, d) => s + d.visitors, 0);
@@ -18,7 +18,7 @@ export default async function VisitorsPage() {
   const total = (n: number, k: "visitors" | "views") => days.slice(-n).reduce((s, d) => s + d[k], 0);
   return (
     <>
-      <PageHead icon="eye" title="Visitors" sub="Counted on your website, without cookies or personal data." />
+      <PageHead icon="eye" title="Analytics" sub="Goals, visitors and pages. Counted on your website without cookies or personal data." />
       <section className="stats-row">
         <Stat dark label="Today" value={String(days[days.length - 1].visitors)} note={`${days[days.length - 1].views} page views`} />
         <Stat label="Last 7 days" value={String(total(7, "visitors"))} note={`${total(7, "views")} page views`} />

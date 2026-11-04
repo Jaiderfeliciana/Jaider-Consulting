@@ -1,13 +1,34 @@
-// Admin pages, in menu order. `tint` colors the page's icon tile in the left strip.
-export const adminPages = [
-  { href: "/admin", label: "Overview", icon: "dashboard", tint: "#8b5cf6" },
-  { href: "/admin/bookings", label: "Bookings", icon: "calendar", tint: "#d94ecb" },
-  { href: "/admin/clients", label: "Clients", icon: "users", tint: "#e0479e" },
-  { href: "/admin/earnings", label: "Earnings", icon: "dollar", tint: "#e8a33d" },
-  { href: "/admin/visitors", label: "Visitors", icon: "eye", tint: "#4ade80" },
-  { href: "/admin/tasks", label: "Tasks", icon: "check", tint: "#f472b6" },
-  { href: "/admin/agreements", label: "Agreements", icon: "folder", tint: "#c084fc" },
-  { href: "/admin/setup", label: "Setup", icon: "settings", tint: "#60a5fa" },
+// The admin menu: groups of pages, in sidebar order. Add new pages to the right group as they're built.
+export const adminNav = [
+  {
+    group: "Overview",
+    pages: [
+      { href: "/admin", label: "Dashboard", icon: "dashboard" },
+      { href: "/admin/visitors", label: "Analytics", icon: "chart" },
+    ],
+  },
+  {
+    group: "Business management",
+    pages: [
+      { href: "/admin/clients", label: "Clients / CRM", icon: "users" },
+      { href: "/admin/leads", label: "Leads & Inquiries", icon: "star" },
+      { href: "/admin/bookings", label: "Bookings", icon: "calendar" },
+      { href: "/admin/agreements", label: "Contracts", icon: "folder" },
+      { href: "/admin/tasks", label: "Tasks", icon: "check" },
+    ],
+  },
+  {
+    group: "Financial management",
+    pages: [{ href: "/admin/earnings", label: "Finance & Payments", icon: "dollar" }],
+  },
+  {
+    group: "Agency operations",
+    pages: [{ href: "/admin/assistant", label: "AI Assistant", icon: "bolt" }],
+  },
+  {
+    group: "System",
+    pages: [{ href: "/admin/setup", label: "Integrations", icon: "settings" }],
+  },
 ];
 
 export const isActive = (href: string, path: string) => (href === "/admin" ? path === "/admin" : path.startsWith(href));

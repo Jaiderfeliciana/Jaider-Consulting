@@ -13,7 +13,7 @@ export default async function AgreementsPage() {
   const base = `${h.get("x-forwarded-proto") ?? "https"}://${h.get("host") ?? "www.jaiderfeliciana.com"}`;
   return (
     <>
-      <PageHead icon="folder" title="Agreements" sub="Clients sign your service agreement online; you countersign it here." />
+      <PageHead icon="folder" title="Contracts" sub="Clients sign your service agreement online; you countersign it here." />
       <div className="card">
         <h2>Send an agreement</h2>
         <p className="muted lm-intro">Choose the service and price, then send the link. The client fills in their details and signs.</p>

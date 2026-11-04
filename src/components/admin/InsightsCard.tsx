@@ -25,7 +25,7 @@ export default function InsightsCard({ connected, tip }: { connected: boolean; t
       <button type="button" className="run-btn" onClick={() => ask(QUESTION)} disabled={!connected || loading}>
         {loading ? "Running…" : answer ? "Run again" : "Run analysis"}
       </button>
-      {!connected && <p className="insights-off">Connect Grok on the Setup page to run an analysis.</p>}
+      {!connected && <p className="insights-off">Connect Grok on the Integrations page to run an analysis.</p>}
     </div>
   );
 }
