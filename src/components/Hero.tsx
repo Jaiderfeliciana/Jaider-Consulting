@@ -1,7 +1,7 @@
 import Globe from "./Globe";
 import ScanBox from "./ScanBox";
 
-const chips = ["Live in 14 days", "Mobile-first", "Reply within 24h"];
+const chips = ["Fixed price & timeline", "Mobile-first", "Reply within 24h"];
 
 export default function Hero() {
   return (
@@ -22,7 +22,7 @@ export default function Hero() {
           </p>
           <div className="hero-ctas">
             <a href="/book" className="btn btn-primary">Book a free consultation</a>
-            <a href="#services" className="btn btn-ghost">See my work ↘</a>
+            <a href="#contact" className="btn btn-ghost">Start a project ↘</a>
           </div>
           <ScanBox />
           <div className="chips">

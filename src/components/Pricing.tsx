@@ -1,4 +1,4 @@
-import { packages } from "@/content/site";
+import { monthlyTerms, packages } from "@/content/site";
 
 export default function Pricing() {
   return (
@@ -15,23 +15,28 @@ export default function Pricing() {
               <p className="package-tier">{p.tier}</p>
               <h3>{p.name}</h3>
               <p className="package-price">{p.price}</p>
-              <p className="package-once">one-time · setup</p>
-              <p className="package-monthly">Then: <span>{p.monthly}</span> {p.monthlyNote}</p>
+              <p className="package-once">one-time setup</p>
               <div className="features">
-                {p.features.map(([label, value]) => (
+                {p.setup.map(([label, value]) => (
                   <div key={label} className="feature">
                     <span>{label}</span>
                     <span className={value ? undefined : "none"}>{value ?? "—"}</span>
                   </div>
                 ))}
               </div>
-              <a href="#contact" className={p.popular ? "btn btn-soft" : "btn btn-outline"}>Get a quote</a>
+              <div className="package-plan">
+                <p className="package-monthly">Then <span>{p.monthly}</span>/month · <strong>{p.monthlyName}</strong></p>
+                <p className="plan-label">Every month you get:</p>
+                <ul>{p.monthlyIncludes.map((item) => <li key={item}>{item}</li>)}</ul>
+              </div>
+              <a href="#contact" data-inquiry={p.name} className={p.popular ? "btn btn-soft" : "btn btn-outline"}>Get a quote</a>
             </div>
           ))}
         </div>
         <p className="pricing-note">
-          Need just one thing? See individual prices under <a href="#services">services</a>. 1-on-1 consultation:{" "}
-          <span>$100 per hour</span> — free if you book a package afterwards. All prices in US dollars (USD), excl. BBO.
+          {monthlyTerms} Need just one thing? See individual prices under <a href="#services">services</a>. 1-on-1
+          consultation: <span>$100 per hour</span>, free if you book a package afterwards. Every quote includes a fixed
+          price and timeline. All prices in US dollars (USD), excl. BBO.
         </p>
       </div>
     </section>

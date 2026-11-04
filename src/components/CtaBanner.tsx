@@ -1,4 +1,3 @@
-import { whatsappHref } from "@/content/site";
 
 export default function CtaBanner() {
   return (
@@ -11,8 +10,8 @@ export default function CtaBanner() {
           <h2>More customers start with one message.</h2>
         </div>
         <div className="cta-actions">
-          <a href={whatsappHref()} target="_blank" rel="noopener" className="btn btn-soft">Chat on WhatsApp</a>
-          <a href="#pricing" className="btn btn-on-dark">See packages</a>
+          <a href="/book" className="btn btn-soft">Book a free consultation</a>
+          <a href="#contact" className="btn btn-on-dark">Send a project inquiry</a>
         </div>
       </div>
     </section>

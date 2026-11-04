@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { booking, whatsappHref } from "@/content/site";
+import { trackGoal } from "@/lib/track";
 
 export default function BookingPlanner() {
   const [selected, setSelected] = useState(booking.sessions[0].title);
@@ -18,6 +19,11 @@ export default function BookingPlanner() {
         layout: "month_view",
         cssVarsPerTheme: { light: { "cal-brand": "#6a3ff2" }, dark: { "cal-brand": "#8b5cf6" } },
       });
+      // Count a booked consultation once per page view (Cal.com may send both event versions).
+      let counted = false;
+      const onBooked = () => { if (!counted) { counted = true; trackGoal("consultation"); } };
+      cal("on", { action: "bookingSuccessfulV2", callback: onBooked });
+      cal("on", { action: "bookingSuccessful", callback: onBooked });
     })();
   }, [enabled, session.slug]);
 

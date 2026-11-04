@@ -11,7 +11,7 @@ export default function Header() {
         <a href="/#services" className="nav-link">services</a>
         <a href="/#course" className="nav-link">course</a>
         <a href="/#pricing" className="nav-link">pricing</a>
-        <a href="/book" className="btn btn-primary nav-cta">book a session</a>
+        <a href="/book" className="btn btn-primary nav-cta">free consultation</a>
       </nav>
     </header>
   );

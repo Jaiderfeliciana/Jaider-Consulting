@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { contactTopics, whatsappHref } from "@/content/site";
+import { trackGoal } from "@/lib/track";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -12,6 +13,15 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [sentName, setSentName] = useState<string | null>(null);
+
+  // "Get a quote" buttons (data-inquiry) and links like /?inquiry=Website%20design pick the topic.
+  useEffect(() => {
+    const pick = (t: string | null) => { if (t && contactTopics.includes(t)) { setTopic(t); setSentName(null); } };
+    pick(new URLSearchParams(window.location.search).get("inquiry"));
+    const onClick = (e: MouseEvent) => pick((e.target as Element).closest?.("[data-inquiry]")?.getAttribute("data-inquiry") ?? null);
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   function submit(e: FormEvent) {
     e.preventDefault();
@@ -41,15 +51,16 @@ export default function ContactForm() {
     return (
       <div className="sent">
         <h3>Thanks, {sentName}!</h3>
-        <p>Your message is ready. Tap the button to send it straight to me on WhatsApp.</p>
-        <a href={whatsappHref(prefill)} target="_blank" rel="noopener" className="btn btn-primary">Open WhatsApp</a>
-        <button type="button" onClick={reset} className="link-button">send another message</button>
+        <p>Your project inquiry is ready. Tap the button to send it straight to me on WhatsApp. I&apos;ll reply within 24 hours.</p>
+        <a href={whatsappHref(prefill)} target="_blank" rel="noopener" className="btn btn-primary" onClick={() => trackGoal("inquiry")}>Send on WhatsApp</a>
+        <button type="button" onClick={reset} className="link-button">start a new inquiry</button>
       </div>
     );
   }
 
   return (
     <form onSubmit={submit} className="form" noValidate>
+      <h3 className="form-title">Send a project inquiry</h3>
       <label>
         Your name
         <input value={name} onChange={(e) => { setName(e.target.value); setError(""); }} placeholder="Full name" autoComplete="name" />
@@ -78,7 +89,7 @@ export default function ContactForm() {
         <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={4} placeholder="What does your business do, and what do you want to achieve?" />
       </label>
       <p className="form-error" role="alert">{error}</p>
-      <button type="submit" className="form-submit">Send &amp; book my free consultation</button>
+      <button type="submit" className="form-submit">Send project inquiry</button>
       <p className="form-foot">no obligation · reply within 24 hours</p>
     </form>
   );

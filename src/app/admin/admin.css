@@ -372,3 +372,4 @@
 .bulk-hint { margin: 0; font-size: 13px; }
 .bulk-foot { display: flex; align-items: center; gap: 14px; }
 .bulk-foot span { color: var(--a-green); font-size: 14px; }
+.goals-intro { margin: -6px 0 14px; }

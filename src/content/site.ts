@@ -84,7 +84,7 @@ export const booking = {
 export const showPricing = true;
 
 export const stats = [
-  { value: "14 days", label: "To get your site live" },
+  { value: "2 rounds", label: "Of changes included" },
   { value: "8", label: "Services under one roof" },
   { value: "100%", label: "Built mobile-first" },
   { value: "24h", label: "WhatsApp reply time" },
@@ -92,6 +92,8 @@ export const stats = [
 
 export type Service = {
   title: string;
+  // The matching choice in the inquiry form (contactTopics).
+  topic: string;
   description: string;
   price: string;
   priceNote?: string;
@@ -103,6 +105,7 @@ export type Service = {
 export const services: Service[] = [
   {
     title: "Website design",
+    topic: "Website design",
     description: "Fast, mobile-first websites with a WhatsApp button and a contact form that lands straight in your inbox.",
     price: "From $1,000",
     image: webImg,
@@ -110,6 +113,7 @@ export const services: Service[] = [
   },
   {
     title: "Social media marketing",
+    topic: "Social media marketing",
     description: "Content for Instagram, Facebook and TikTok with a monthly plan — no more random posting.",
     price: "$450",
     priceNote: "per month",
@@ -118,6 +122,7 @@ export const services: Service[] = [
   },
   {
     title: "Meta & Google Ads",
+    topic: "Ads (Meta / Google)",
     description: "Campaigns with a clear budget, the right audience and reports you can actually understand.",
     price: "$350",
     priceNote: "per month + 15% of ad spend",
@@ -126,6 +131,7 @@ export const services: Service[] = [
   },
   {
     title: "Branding & logo",
+    topic: "Branding or logo",
     description: "Logo, colours, typography and a short brand guide so everything looks like one brand.",
     price: "From $650",
     image: brandImg,
@@ -133,6 +139,7 @@ export const services: Service[] = [
   },
   {
     title: "SEO & Google",
+    topic: "SEO / Google",
     description: "Google Business Profile, local keywords and speed — so people in Aruba find you first.",
     price: "$395",
     priceNote: "setup · $150 per month",
@@ -141,6 +148,7 @@ export const services: Service[] = [
   },
   {
     title: "1-on-1 consultation",
+    topic: "1-on-1 consultation",
     description: "One hour with me: we look at your business and you leave with a written, step-by-step plan.",
     price: "$100",
     priceNote: "per hour",
@@ -149,6 +157,7 @@ export const services: Service[] = [
   },
   {
     title: "Grok AI chatbot",
+    topic: "Grok AI chatbot",
     description: "An AI assistant powered by Grok that answers your customers 24/7 on your website or WhatsApp and sends new leads straight to you.",
     price: "$595",
     priceNote: "setup · $49 per month",
@@ -157,6 +166,7 @@ export const services: Service[] = [
   },
   {
     title: "Online course",
+    topic: "Online course",
     description: "Learn to build your own website and run your own social media marketing.",
     price: "$215",
     priceNote: "full course",
@@ -171,25 +181,38 @@ export type Package = {
   name: string;
   price: string;
   monthly: string;
-  monthlyNote: string;
-  features: [label: string, value: string | null][];
+  monthlyName: string;
+  // What the monthly fee pays for, in plain words.
+  monthlyIncludes: string[];
+  // One-time setup items (paid with the setup price). `null` = not included.
+  setup: [label: string, value: string | null][];
   popular?: boolean;
 };
+
+// Shown under the packages. Matches section 2 of the client service agreement.
+export const monthlyTerms = "Monthly plans start after launch, are paid in advance and run month to month: cancel any time with 30 days' notice.";
 
 export const packages: Package[] = [
   {
     tier: "Basic",
     name: "Basic package",
-    price: "$795",
+    price: "$1,195",
     monthly: "$79",
-    monthlyNote: "per month — hosting, backups, updates",
-    features: [
+    monthlyName: "Website care",
+    monthlyIncludes: [
+      "Hosting with SSL security (the padlock)",
+      "Daily backups and security updates",
+      "Uptime monitoring: I fix problems if your site goes down",
+      "Up to 30 minutes of small text or photo changes",
+      "Email & WhatsApp support, reply within 24 hours",
+    ],
+    setup: [
       ["Website design", "1 page"],
-      ["Social media marketing", null],
-      ["Meta & Google Ads", null],
       ["Branding & logo", "Simple logo"],
       ["SEO & Google", "Google Business Profile"],
       ["1-on-1 consultation", "1 session"],
+      ["Social media setup", null],
+      ["Meta & Google Ads setup", null],
       ["Online course", null],
     ],
   },
@@ -198,16 +221,23 @@ export const packages: Package[] = [
     name: "Standard package",
     price: "$1,595",
     monthly: "$475",
-    monthlyNote: "per month — content and maintenance",
+    monthlyName: "Website care + social media",
     popular: true,
-    features: [
+    monthlyIncludes: [
+      "Everything in Website care",
+      "12 posts + 8 stories on Instagram & Facebook, planned, designed and scheduled",
+      "Up to 1 hour of website changes",
+      "One 1-on-1 consultation",
+      "Monthly report: what worked and what's next",
+    ],
+    setup: [
       ["Website design", "Up to 6 pages + blog"],
-      ["Social media marketing", "12 post + 8 story"],
-      ["Meta & Google Ads", "Campaign setup"],
       ["Branding & logo", "Logo + brand guide"],
-      ["SEO & Google", "Full local SEO"],
-      ["1-on-1 consultation", "1 per month"],
-      ["Online course", "1 seat included"],
+      ["SEO & Google", "Local SEO setup"],
+      ["Meta & Google Ads setup", "First campaign"],
+      ["Social media setup", "Profiles + content plan"],
+      ["Online course", "1 seat"],
+      ["1-on-1 consultation", "Kickoff session"],
     ],
   },
   {
@@ -215,21 +245,30 @@ export const packages: Package[] = [
     name: "Pro package",
     price: "$2,950",
     monthly: "$1,095",
-    monthlyNote: "per month — all services, priority support",
-    features: [
-      ["Website design", "Unlimited + webshop"],
-      ["Social media marketing", "20 post + 12 story + reels"],
-      ["Meta & Google Ads", "Managed + 15% ad spend"],
+    monthlyName: "Full growth",
+    monthlyIncludes: [
+      "Everything in Standard",
+      "20 posts + 12 stories + reels on Instagram, Facebook & TikTok",
+      "Meta & Google Ads management (your ad budget is paid separately, plus 15% of ad spend)",
+      "Ongoing SEO with a monthly report",
+      "Unlimited 1-on-1 consultations during working hours",
+      "Up to 2 hours of website changes",
+      "Priority support: reply the same working day",
+    ],
+    setup: [
+      ["Website design", "Unlimited pages + webshop"],
       ["Branding & logo", "Full branding"],
-      ["SEO & Google", "SEO + monthly report"],
-      ["1-on-1 consultation", "Unlimited"],
-      ["Online course", "2 seats included"],
+      ["SEO & Google", "Full local SEO setup"],
+      ["Meta & Google Ads setup", "Campaigns + tracking"],
+      ["Social media setup", "Profiles + content plan"],
+      ["Online course", "2 seats"],
+      ["1-on-1 consultation", "Kickoff session"],
     ],
   },
 ];
 
 export const processSteps = [
-  { title: "Free consultation", text: "30 minutes on WhatsApp or in person. I listen to what your business really needs." },
+  { title: "Free consultation", text: "30 minutes by video call, WhatsApp or in person. Book it online in a minute. I listen to what your business really needs." },
   { title: "Plan & quote", text: "You get a written quote with a fixed price, timeline and exactly what's included." },
   { title: "Build & review", text: "You see the design before launch. Two rounds of changes included." },
   { title: "Launch & grow", text: "We go live, measure what works and keep improving every month." },
@@ -244,4 +283,8 @@ export const contactTopics = [
   "Grok AI chatbot",
   "1-on-1 consultation",
   "Online course",
+  "Basic package",
+  "Standard package",
+  "Pro package",
+  "Something else",
 ];

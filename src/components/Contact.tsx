@@ -46,9 +46,10 @@ export default function Contact() {
           <p className="eyebrow" style={{ marginBottom: 20 }}>05 / Contact</p>
           <h2 className="h2 contact-title">Let&apos;s talk. The consultation is free.</h2>
           <p className="contact-lede">
-            Tell me what your business does and what you want to achieve. I&apos;ll reply within 24 hours with a
-            concrete idea — no obligation.
+            Book a free 30-minute consultation, or send a project inquiry and I&apos;ll reply within 24 hours with a
+            concrete idea. No obligation.
           </p>
+          <a href="/book" className="btn btn-primary contact-book">Book a free consultation</a>
           <div className="channels">
             {channels.map((c) => (
               <a

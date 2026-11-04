@@ -460,3 +460,17 @@ section[id] { scroll-margin-top: 76px; }
   .doc-brand, .doc-tagline { color: #6a3ff2 !important; background: none !important; }
   .doc-signatures { break-inside: avoid; }
 }
+
+/* ---------- conversion-focused pricing & contact ---------- */
+.package-plan { margin-top: 4px; padding: 14px; border-radius: 12px; background: var(--bg); }
+.package-popular .package-plan { background: rgba(255, 255, 255, 0.06); }
+.package-plan .package-monthly { margin: 0 0 8px; }
+.package-plan .package-monthly strong { font-weight: 500; }
+.plan-label { margin: 0 0 6px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.package-popular .plan-label { color: #b8b0d8; }
+.package-plan ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; font-size: 14px; color: var(--ink-2); }
+.package-popular .package-plan ul { color: #ded9f2; }
+.service-quote { display: inline-flex; align-items: center; min-height: 40px; font-family: var(--font-display); font-size: 15px; color: var(--violet); }
+.service-featured .service-quote { color: var(--pink); }
+.contact-book { min-height: 52px; padding: 0 26px; margin-bottom: 26px; font-size: 16px; }
+.form-title { margin: 0 0 4px; font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); }

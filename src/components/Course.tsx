@@ -17,7 +17,7 @@ export default function Course() {
               <p key={m}><span>M{i + 1}</span> {m}</p>
             ))}
           </div>
-          <a href="#contact" className="btn btn-primary course-cta">Enroll in the course</a>
+          <a href="#contact" data-inquiry="Online course" className="btn btn-primary course-cta">Enroll in the course</a>
         </div>
         <div className="course-card">
           <p className="eyebrow">Next group</p>

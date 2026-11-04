@@ -77,6 +77,21 @@ export async function recordVisit(path: string, newVisitor: boolean) {
   await pipeline(cmds);
 }
 
+// Conversions: consultations booked on /book and project inquiries sent, counted per month.
+export const GOALS = ["consultation", "inquiry"] as const;
+export type Goal = (typeof GOALS)[number];
+
+export async function recordGoal(goal: Goal) {
+  await pipeline([["HINCRBY", `jf:goals:${monthKey()}`, goal, 1], ["EXPIRE", `jf:goals:${monthKey()}`, 60 * 60 * 24 * 800]]);
+}
+
+export async function getGoals(month: string) {
+  const flat = ((await command("HGETALL", `jf:goals:${month}`)) as string[] | null) ?? [];
+  const out: Record<Goal, number> = { consultation: 0, inquiry: 0 };
+  for (let i = 0; i < flat.length; i += 2) if ((GOALS as readonly string[]).includes(flat[i])) out[flat[i] as Goal] = Number(flat[i + 1]);
+  return out;
+}
+
 export async function getVisits(days: number) {
   const keys = lastDays(days);
   const [views, visitors, pages] = await pipeline([

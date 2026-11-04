@@ -22,6 +22,7 @@ export default function Services() {
                 {s.price}
                 {s.priceNote && <> <span>{s.priceNote}</span></>}
               </p>
+              <a href="#contact" data-inquiry={s.topic} className="service-quote">Get a quote →</a>
             </div>
           ))}
         </div>
