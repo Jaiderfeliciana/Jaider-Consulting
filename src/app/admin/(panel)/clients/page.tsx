@@ -60,6 +60,7 @@ export default async function ClientsPage({ searchParams }: { searchParams: Prom
                   </select>
                   <button type="submit" className="a-btn a-btn-small">Update</button>
                 </form>
+                <a href={`/admin/clients/${c.id}/portal`} className="a-btn a-btn-small">Portal</a>
                 <form action={removeClient}>
                   <input type="hidden" name="id" value={c.id} />
                   <ConfirmButton message={`Delete ${c.name}? This can't be undone.`}>Delete</ConfirmButton>

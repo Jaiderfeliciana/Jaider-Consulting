@@ -2,6 +2,8 @@ import { PageHead } from "@/components/admin/Bits";
 import { isCalConfigured } from "@/lib/admin/cal";
 import { isDbConfigured } from "@/lib/admin/data";
 import { isAssistantConfigured } from "@/lib/admin/assistant";
+import { isEmailConfigured } from "@/lib/portal/email";
+import { isFilesConfigured } from "@/lib/portal/files";
 
 function Step({ done, title, children }: { done: boolean; title: string; children: React.ReactNode }) {
   return (
@@ -33,6 +35,22 @@ export default function SetupPage() {
           <li>In Vercel, open <strong>Settings → Environment Variables</strong> and add <code>CAL_API_KEY</code> with that key as the value.</li>
           <li>Redeploy (Deployments → latest → Redeploy).</li>
         </ol>
+      </Step>
+      <Step done={isEmailConfigured()} title="Email — client portal login codes & notifications">
+        <ol>
+          <li>Create a free account at <strong>resend.com</strong>.</li>
+          <li>Under <strong>Domains</strong>, add <code>jaiderfeliciana.com</code> and add the DNS records it shows where your domain is managed (e.g. in Vercel → Domains). Wait until it says <strong>Verified</strong>.</li>
+          <li>Under <strong>API Keys</strong>, create a key with sending access.</li>
+          <li>In Vercel, add <code>RESEND_API_KEY</code> (the key) and <code>PORTAL_FROM_EMAIL</code> = <code>Jaider Feliciana &lt;portal@jaiderfeliciana.com&gt;</code>, then redeploy.</li>
+        </ol>
+      </Step>
+      <Step done={isFilesConfigured()} title="File storage — client uploads">
+        <ol>
+          <li>In your Vercel project, open <strong>Storage</strong> → <strong>Create</strong> → <strong>Blob</strong>.</li>
+          <li>Connect it to this project. Vercel adds <code>BLOB_READ_WRITE_TOKEN</code> automatically.</li>
+          <li>Redeploy.</li>
+        </ol>
+        <p className="setup-note">Files are stored privately: only the client who uploaded them and you (logged in here) can open them.</p>
       </Step>
       <Step done={isAssistantConfigured()} title="Grok AI assistant">
         <ol>

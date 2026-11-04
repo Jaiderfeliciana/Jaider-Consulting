@@ -50,6 +50,14 @@ print or save them as PDF. Create a personal link there with the service and pri
 The terms are in `src/content/agreement.ts`; when you change them, also change `version`.
 Signing needs the database (see below).
 
+## Client portal (/portal)
+
+Clients log in with their email and a one-time code, then see their project's progress,
+payments and balance, signed agreements and links, and can send messages and files. Set up a
+portal per client from **Admin → Clients → Portal**. Needs the database, `RESEND_API_KEY` +
+`PORTAL_FROM_EMAIL` (login codes and notifications) and Vercel Blob (`BLOB_READ_WRITE_TOKEN`,
+private file uploads). The Setup page in the admin panel has the steps.
+
 ## Admin panel (/admin)
 
 A private dashboard for running the business: Cal.com bookings, clients, earnings, tasks,
