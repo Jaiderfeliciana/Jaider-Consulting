@@ -21,6 +21,7 @@ const paths: Record<string, string> = {
   mail: "M3 6h18v12H3zM3 7l9 6 9-6",
   chevron: "M6 9l6 6 6-6",
   pen: "M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z",
+  file: "M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M9 13h6M9 17h6",
 };
 
 export default function Icon({ name, size = 20 }: { name: keyof typeof paths | string; size?: number }) {
