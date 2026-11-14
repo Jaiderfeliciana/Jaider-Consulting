@@ -19,10 +19,7 @@ export const adminNav = [
   },
   {
     group: "Financial management",
-    pages: [
-      { href: "/admin/earnings", label: "Finance & Payments", icon: "dollar" },
-      { href: "/admin/invoices", label: "Invoices", icon: "file" },
-    ],
+    pages: [{ href: "/admin/earnings", label: "Finance & Payments", icon: "dollar" }],
   },
   {
     group: "Agency operations",

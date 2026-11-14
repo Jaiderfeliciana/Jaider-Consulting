@@ -63,10 +63,6 @@ then redeploy:
 | `CAL_API_KEY` | Reads bookings from Cal.com (Cal.com → Settings → Developer → API keys). |
 | `XAI_API_KEY` | Turns on the Grok assistant (console.x.ai → API Keys). Optional: `XAI_MODEL` to choose the model. |
 
-**Invoices** (Admin → Invoices) are numbered JF-YEAR-0001, printable as PDF and shared with clients through a
-private link at `/invoice/<id>` once marked as sent. Marking one paid adds the payment to Finance & Payments.
-Your business details, tax number and payment instructions are saved in the database under Invoice settings.
-
 The **Setup** page inside the panel shows what is connected.
 
 ## Project structure
