@@ -220,7 +220,7 @@ export const packages: Package[] = [
     tier: "Standard",
     name: "Standard package",
     price: "$1,595",
-    monthly: "$475",
+    monthly: "$575",
     monthlyName: "Website care + social media",
     popular: true,
     monthlyIncludes: [
