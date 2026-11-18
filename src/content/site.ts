@@ -115,7 +115,7 @@ export const services: Service[] = [
     title: "Social media marketing",
     topic: "Social media marketing",
     description: "Content for Instagram, Facebook and TikTok with a monthly plan — no more random posting.",
-    price: "$500",
+    price: "$550",
     priceNote: "per month",
     image: socialImg,
     imageAlt: "Social media post on a phone with app icons",
