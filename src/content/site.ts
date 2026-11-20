@@ -196,7 +196,7 @@ export const packages: Package[] = [
   {
     tier: "Basic",
     name: "Basic package",
-    price: "$1,195",
+    price: "$1,695",
     monthly: "$79",
     monthlyName: "Website care",
     monthlyIncludes: [
@@ -219,7 +219,7 @@ export const packages: Package[] = [
   {
     tier: "Standard",
     name: "Standard package",
-    price: "$1,595",
+    price: "$2,495",
     monthly: "$575",
     monthlyName: "Website care + social media",
     popular: true,
@@ -243,7 +243,7 @@ export const packages: Package[] = [
   {
     tier: "Pro",
     name: "Pro package",
-    price: "$2,950",
+    price: "$3,450",
     monthly: "$1,095",
     monthlyName: "Full growth",
     monthlyIncludes: [
