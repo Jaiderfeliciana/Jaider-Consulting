@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { services } from "@/content/site";
+import { servicePageFor } from "@/content/servicePages";
 
 export default function Services() {
   return (
@@ -10,7 +11,9 @@ export default function Services() {
           <p className="eyebrow">01 / Services</p>
         </div>
         <div className="card-grid">
-          {services.map((s, i) => (
+          {services.map((s, i) => {
+            const page = servicePageFor(s.title);
+            return (
             <div key={s.title} className={s.featured ? "service service-featured" : "service"}>
               <div className="service-img">
                 <Image src={s.image} alt={s.imageAlt} sizes="(max-width: 600px) 100vw, 400px" />
@@ -22,9 +25,13 @@ export default function Services() {
                 {s.price}
                 {s.priceNote && <> <span>{s.priceNote}</span></>}
               </p>
-              <a href="#contact" data-inquiry={s.topic} className="service-quote">Get a quote →</a>
+              <div className="service-links">
+                {page && <a href={`/${page.slug}`} className="service-more">Learn more<span className="sr-only"> about {s.title.toLowerCase()} in Aruba</span></a>}
+                <a href="#contact" data-inquiry={s.topic} className="service-quote">Get a quote →</a>
+              </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

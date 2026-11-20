@@ -4,12 +4,12 @@ import { useEffect, useState, type FormEvent } from "react";
 import { contactTopics, whatsappHref } from "@/content/site";
 import { trackGoal } from "@/lib/track";
 
-export default function ContactForm() {
+export default function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [website, setWebsite] = useState("");
   const [social, setSocial] = useState("");
-  const [topic, setTopic] = useState(contactTopics[0]);
+  const [topic, setTopic] = useState(defaultTopic && contactTopics.includes(defaultTopic) ? defaultTopic : contactTopics[0]);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [sentName, setSentName] = useState<string | null>(null);

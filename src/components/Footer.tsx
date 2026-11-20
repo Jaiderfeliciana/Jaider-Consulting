@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import { whatsappHref } from "@/content/site";
+import { servicePages } from "@/content/servicePages";
 
 export default function Footer() {
   return (
@@ -16,6 +17,9 @@ export default function Footer() {
           <a href={whatsappHref()} target="_blank" rel="noopener" className="accent">whatsapp</a>
         </div>
       </div>
+      <nav aria-label="Services" className="container footer-services">
+        {servicePages.map((p) => <a key={p.slug} href={`/${p.slug}`}>{p.navLabel} Aruba</a>)}
+      </nav>
     </footer>
   );
 }

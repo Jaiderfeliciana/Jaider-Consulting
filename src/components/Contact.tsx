@@ -38,12 +38,12 @@ const channels = [
   },
 ];
 
-export default function Contact() {
+export default function Contact({ topic, eyebrow = "05 / Contact" }: { topic?: string; eyebrow?: string }) {
   return (
     <section id="contact" className="section contact">
       <div className="container split">
         <div>
-          <p className="eyebrow" style={{ marginBottom: 20 }}>05 / Contact</p>
+          <p className="eyebrow" style={{ marginBottom: 20 }}>{eyebrow}</p>
           <h2 className="h2 contact-title">Let&apos;s talk. The consultation is free.</h2>
           <p className="contact-lede">
             Book a free 30-minute consultation, or send a project inquiry and I&apos;ll reply within 24 hours with a
@@ -69,7 +69,7 @@ export default function Contact() {
           <p className="contact-hours">{contact.location}</p>
         </div>
         <div className="form-card">
-          <ContactForm />
+          <ContactForm defaultTopic={topic} />
         </div>
       </div>
     </section>
