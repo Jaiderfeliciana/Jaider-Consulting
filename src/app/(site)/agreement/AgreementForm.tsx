@@ -29,7 +29,7 @@ export default function AgreementForm({ service, price, today }: { service?: str
         <label>Agreed price (USD)
           {price
             ? <input name="price" value={price} readOnly className="is-fixed" />
-            : <input name="price" inputMode="decimal" required placeholder="e.g. 1000" />}
+            : <input name="price" inputMode="decimal" required placeholder="e.g. 1500" />}
         </label>
         <label>Date<input value={today} readOnly className="is-fixed" aria-label="Date" /></label>
       </div>

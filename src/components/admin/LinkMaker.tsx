@@ -15,7 +15,7 @@ export default function LinkMaker({ services, base }: { services: string[]; base
           <select value={service} onChange={(e) => setService(e.target.value)}>{services.map((s) => <option key={s}>{s}</option>)}</select>
         </label>
         <label>Agreed price (USD)
-          <input value={price} onChange={(e) => setPrice(e.target.value.replace(/[^0-9.,]/g, ""))} inputMode="decimal" placeholder="e.g. 1000" />
+          <input value={price} onChange={(e) => setPrice(e.target.value.replace(/[^0-9.,]/g, ""))} inputMode="decimal" placeholder="e.g. 1500" />
         </label>
       </div>
       <p className="lm-link"><code>{link}</code></p>

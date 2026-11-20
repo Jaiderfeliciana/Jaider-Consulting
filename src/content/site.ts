@@ -107,7 +107,7 @@ export const services: Service[] = [
     title: "Website design",
     topic: "Website design",
     description: "Fast, mobile-first websites with a WhatsApp button and a contact form that lands straight in your inbox.",
-    price: "From $1,000",
+    price: "From $1,500",
     image: webImg,
     imageAlt: "Website design mockup on laptop and phone",
   },

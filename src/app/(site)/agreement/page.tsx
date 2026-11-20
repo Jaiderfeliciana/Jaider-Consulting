@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMeta({
 });
 export const dynamic = "force-dynamic";
 
-// Service and price can be filled in by link: /agreement?service=Website%20design&price=1000
+// Service and price can be filled in by link: /agreement?service=Website%20design&price=1500
 export default async function AgreementPage({ searchParams }: { searchParams: Promise<{ service?: string; price?: string }> }) {
   const { service, price } = await searchParams;
   const today = new Date(`${dayKey()}T12:00:00Z`).toLocaleDateString("en-US", { dateStyle: "long", timeZone: "UTC" });
