@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingPlanner from "@/components/BookingPlanner";
 import HoursBar from "@/components/HoursBar";
 import { booking, whatsappHref } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Book a session — Jaider Feliciana",
   description: "Pick a time for a free consultation or a 1-on-1 session with Jaider Feliciana.",
-};
+  path: "/book",
+});
 
 export default function BookPage() {
   return (

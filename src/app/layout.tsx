@@ -8,16 +8,17 @@ import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/500.css";
 import "./globals.css";
+import { siteName, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Jaider Feliciana — Websites, Social Media & Ads in Aruba",
   description:
     "Fast, professional websites, social media marketing, Meta & Google Ads, branding and SEO for Aruba businesses. Book a free consultation.",
-  openGraph: {
-    title: "Jaider Feliciana — Websites that bring you more customers",
-    description: "Websites, social media and ads for Aruba businesses. Free consultation on WhatsApp.",
-    type: "website",
-  },
+  applicationName: siteName,
+  authors: [{ name: siteName }],
+  openGraph: { siteName, locale: "en_US", type: "website" },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

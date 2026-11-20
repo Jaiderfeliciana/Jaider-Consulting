@@ -7,7 +7,12 @@ import PrintButton from "@/components/PrintButton";
 import { getAgreement, isDbConfigured } from "@/lib/admin/data";
 import { whatsappHref } from "@/content/site";
 
-export const metadata: Metadata = { title: "Signed agreement — Jaider Feliciana", robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: "Signed agreement — Jaider Feliciana",
+  description: "Your signed client service agreement with Jaider Feliciana.",
+  robots: { index: false, follow: false },
+  openGraph: { title: "Signed agreement — Jaider Feliciana", description: "Your signed client service agreement with Jaider Feliciana." },
+};
 export const dynamic = "force-dynamic";
 
 // The client's copy. The link contains a long random id, so only people with the link can open it.

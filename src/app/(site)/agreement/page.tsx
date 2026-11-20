@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AgreementDocument from "@/components/AgreementDocument";
@@ -7,10 +8,12 @@ import { isDbConfigured } from "@/lib/admin/data";
 import { dayKey } from "@/lib/admin/dates";
 import { whatsappHref } from "@/content/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Client Service Agreement — Jaider Feliciana",
-  robots: { index: false, follow: false },
-};
+  description: "Review and sign your client service agreement with Jaider Feliciana.",
+  path: "/agreement",
+  index: false,
+});
 export const dynamic = "force-dynamic";
 
 // Service and price can be filled in by link: /agreement?service=Website%20design&price=1000
