@@ -385,3 +385,40 @@
 @media (max-width: 1000px) { .assistant-page { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 1000px) { .side-name { font-size: 12px; white-space: nowrap; } .side-brand { min-width: 0; } }
 @media (max-width: 380px) { .side-name { display: none; } }
+
+/* ---------- booking actions ---------- */
+.booking-actions { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.booking-actions form { display: contents; }
+.booking-error { margin-top: 6px; max-width: 280px; white-space: normal; }
+.a-btn-accept { min-height: 36px; padding: 0 14px; font-size: 13px; background: rgba(74, 222, 128, 0.16); color: var(--a-green); border-color: rgba(74, 222, 128, 0.35); }
+.a-btn-accept:hover { background: rgba(74, 222, 128, 0.26); }
+.a-btn-cancel { background: var(--a-red); color: #1a0b0b; }
+.a-btn-cancel:hover { filter: brightness(1.08); }
+.a-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.pill-wait { background: rgba(250, 204, 21, 0.15); color: #fde047; text-transform: none; white-space: nowrap; }
+.a-notice { margin: 0 0 18px; padding: 12px 16px; border-radius: 14px; background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.3); color: #bbf7d0; }
+
+.a-dialog {
+  width: min(520px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto;
+  padding: 24px; border-radius: 20px; border: 1px solid var(--a-line-2);
+  background: var(--a-surface); color: var(--a-text); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.a-dialog::backdrop { background: rgba(6, 4, 18, 0.7); backdrop-filter: blur(3px); }
+.a-dialog-head h2 { margin: 0 0 4px; font-size: 22px; }
+.a-dialog-head p { margin: 0; font-size: 14px; }
+.a-dialog .optional { text-transform: none; letter-spacing: 0; opacity: 0.7; }
+.a-dialog-actions { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+.slot-picker { display: grid; gap: 8px; }
+.slot-picker .muted { margin: 0; font-size: 14px; }
+.slot-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--a-muted); }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+.slot {
+  min-height: 42px; border-radius: 10px; border: 1px solid var(--a-line-2); background: rgba(255, 255, 255, 0.04);
+  color: var(--a-text); font-family: var(--font-mono); font-size: 14px; cursor: pointer;
+}
+.slot:hover { border-color: var(--a-accent); }
+.slot-on { background: var(--a-gradient); border-color: transparent; }
+@media (max-width: 560px) {
+  .a-dialog { padding: 20px 16px; }
+  .a-dialog-actions .a-btn { flex: 1; }
+}

@@ -9,6 +9,7 @@ import { SESSION_COOKIE, SESSION_DAYS, createSessionValue } from "@/lib/admin/se
 import { adminConfig, type ClientStatus } from "@/lib/admin/config";
 import { dayKey } from "@/lib/admin/dates";
 import * as data from "@/lib/admin/data";
+import * as cal from "@/lib/admin/cal";
 
 const text = (form: FormData, key: string, max = 300) => String(form.get(key) ?? "").trim().slice(0, max);
 
@@ -172,4 +173,38 @@ export async function removeAgreement(form: FormData) {
   await data.deleteAgreement(text(form, "id", 64));
   revalidatePath("/admin", "layout");
   redirect("/admin/agreements");
+}
+
+// ---------- bookings (Cal.com) ----------
+
+export async function manageBooking(_prev: { error: string }, form: FormData): Promise<{ error: string }> {
+  await requireAdmin();
+  const uid = text(form, "id", 200);
+  const what = text(form, "do", 20);
+  const reason = text(form, "reason", 500);
+  if (!uid) return { error: "That booking could not be found." };
+
+  let result;
+  if (what === "accept") {
+    result = await cal.acceptBooking(uid);
+  } else if (what === "cancel") {
+    result = await cal.cancelBooking(uid, reason);
+  } else if (what === "reschedule") {
+    const start = text(form, "start", 60);
+    if (!start || Number.isNaN(Date.parse(start))) return { error: "Pick a new time first." };
+    if (Date.parse(start) < Date.now()) return { error: "The new time is in the past." };
+    result = await cal.rescheduleBooking(uid, start, reason);
+  } else {
+    return { error: "Unknown action." };
+  }
+  if (!result.ok) return { error: result.error };
+  revalidatePath("/admin", "layout");
+  redirect(`/admin/bookings?done=${what}`);
+}
+
+export async function bookingSlots(slug: string, day: string) {
+  await requireAdmin();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) return { slots: [], error: "Pick a date." };
+  if (!slug) return { slots: [], error: "This session type isn't linked to Cal.com, so enter a time yourself." };
+  return cal.freeSlots(slug, day);
 }
