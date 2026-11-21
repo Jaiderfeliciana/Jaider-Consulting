@@ -25,7 +25,7 @@ async function businessSummary() {
       `${c.name}${c.business ? ` (${c.business})` : ""} — ${c.service || "no service"}, ${c.status}, added ${c.createdAt.slice(0, 10)}${c.notes ? `, notes: ${c.notes.replace(/\s+/g, " ").slice(0, 200)}` : ""}`).join(" | ") || "none"));
     const months = lastMonths(6).map((m) => `${m}: ${money(payments.filter((p) => p.date.startsWith(m)).reduce((s, p) => s + p.amount, 0))}`);
     lines.push(`Revenue per month (last 6): ${months.join(", ")}.`);
-    lines.push(`Recent payments: ${payments.slice(0, 20).map((p) => `${p.date} ${money(p.amount)}${p.client ? ` from ${p.client}` : ""}${p.description ? ` (${p.description})` : ""}`).join("; ") || "none"}.`);
+    lines.push(`Recent payments: ${payments.slice(0, 20).map((p) => `${p.date} ${money(p.amount)}${p.client ? ` from ${p.client}` : ""}${p.description ? ` (${p.description})` : ""}${p.method ? `, ${p.method}` : ""}`).join("; ") || "none"}.`);
     lines.push(`Open tasks: ${tasks.filter((t) => !t.done).map((t) => `${t.title}${t.due ? ` (due ${t.due})` : ""}`).join("; ") || "none"}.`);
     lines.push(`Website visitors last 30 days: ${visits.days.reduce((s, d) => s + d.visitors, 0)}.`);
   } else {

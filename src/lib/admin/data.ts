@@ -21,8 +21,16 @@ export type Payment = {
   description: string;
   amount: number;
   date: string; // YYYY-MM-DD
+  // How the money came in. Payments recorded before this was added have none.
+  method?: PaymentMethod;
   createdAt: string;
 };
+
+export type PaymentMethod = "cash" | "transfer";
+export const paymentMethods: { value: PaymentMethod; label: string }[] = [
+  { value: "transfer", label: "Bank transfer" },
+  { value: "cash", label: "Cash" },
+];
 
 const CLIENTS = "jf:clients";
 const PAYMENTS = "jf:payments";

@@ -87,6 +87,7 @@ export async function addPayment(form: FormData) {
     description: text(form, "description", 200),
     amount,
     date,
+    method: text(form, "method", 20) === "cash" ? "cash" : "transfer",
     createdAt: new Date().toISOString(),
   });
   revalidatePath("/admin", "layout");
